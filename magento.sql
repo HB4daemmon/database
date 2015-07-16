@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?16 �?14:05
+-- 生成日期: 2015 �?07 �?16 �?14:07
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -7319,7 +7319,18 @@ CREATE TABLE IF NOT EXISTS `salesrule_coupon` (
   UNIQUE KEY `UNQ_SALESRULE_COUPON_CODE` (`code`),
   UNIQUE KEY `UNQ_SALESRULE_COUPON_RULE_ID_IS_PRIMARY` (`rule_id`,`is_primary`),
   KEY `IDX_SALESRULE_COUPON_RULE_ID` (`rule_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon' AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `salesrule_coupon`
+--
+
+INSERT INTO `salesrule_coupon` (`coupon_id`, `rule_id`, `code`, `usage_limit`, `usage_per_customer`, `times_used`, `expiration_date`, `is_primary`, `created_at`, `type`) VALUES
+(1, 1, 'XAS6381WJC7R', 0, 0, 0, NULL, NULL, '2015-07-16 04:06:59', 1),
+(2, 1, '7ZJIJCWQ1BUT', 0, 0, 0, NULL, NULL, '2015-07-16 04:06:59', 1),
+(3, 1, 'K14G8LXUCBFV', 0, 0, 0, NULL, NULL, '2015-07-16 04:06:59', 1),
+(4, 1, '1YC1DK052FTR', 0, 0, 0, NULL, NULL, '2015-07-16 04:06:59', 1),
+(5, 1, 'WE5E09FCXWGA', 0, 0, 0, NULL, NULL, '2015-07-16 04:06:59', 1);
 
 -- --------------------------------------------------------
 
