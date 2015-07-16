@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?16 �?13:50
+-- 生成日期: 2015 �?07 �?16 �?14:01
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -7289,7 +7289,14 @@ CREATE TABLE IF NOT EXISTS `salesrule` (
   `uses_per_coupon` int(11) NOT NULL DEFAULT '0' COMMENT 'Uses Per Coupon',
   PRIMARY KEY (`rule_id`),
   KEY `IDX_SALESRULE_IS_ACTIVE_SORT_ORDER_TO_DATE_FROM_DATE` (`is_active`,`sort_order`,`to_date`,`from_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Salesrule' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `salesrule`
+--
+
+INSERT INTO `salesrule` (`rule_id`, `name`, `description`, `from_date`, `to_date`, `uses_per_customer`, `is_active`, `conditions_serialized`, `actions_serialized`, `stop_rules_processing`, `is_advanced`, `product_ids`, `sort_order`, `simple_action`, `discount_amount`, `discount_qty`, `discount_step`, `simple_free_shipping`, `apply_to_shipping`, `times_used`, `is_rss`, `coupon_type`, `use_auto_generation`, `uses_per_coupon`) VALUES
+(1, 'Free shipping', NULL, NULL, NULL, 0, 1, 'a:7:{s:4:"type";s:32:"salesrule/rule_condition_combine";s:9:"attribute";N;s:8:"operator";N;s:5:"value";s:1:"1";s:18:"is_value_processed";N;s:10:"aggregator";s:3:"all";s:10:"conditions";a:1:{i:0;a:5:{s:4:"type";s:32:"salesrule/rule_condition_address";s:9:"attribute";s:13:"base_subtotal";s:8:"operator";s:1:">";s:5:"value";s:2:"20";s:18:"is_value_processed";b:0;}}}', 'a:6:{s:4:"type";s:40:"salesrule/rule_condition_product_combine";s:9:"attribute";N;s:8:"operator";N;s:5:"value";s:1:"1";s:18:"is_value_processed";N;s:10:"aggregator";s:3:"all";}', 0, 1, NULL, 0, 'by_percent', '0.0000', NULL, 0, 2, 0, 0, 1, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -7359,6 +7366,13 @@ CREATE TABLE IF NOT EXISTS `salesrule_customer_group` (
   KEY `IDX_SALESRULE_CUSTOMER_GROUP_CUSTOMER_GROUP_ID` (`customer_group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Rules To Customer Groups Relations';
 
+--
+-- 转存表中的数据 `salesrule_customer_group`
+--
+
+INSERT INTO `salesrule_customer_group` (`rule_id`, `customer_group_id`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -7406,6 +7420,13 @@ CREATE TABLE IF NOT EXISTS `salesrule_website` (
   KEY `IDX_SALESRULE_WEBSITE_RULE_ID` (`rule_id`),
   KEY `IDX_SALESRULE_WEBSITE_WEBSITE_ID` (`website_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Rules To Websites Relations';
+
+--
+-- 转存表中的数据 `salesrule_website`
+--
+
+INSERT INTO `salesrule_website` (`rule_id`, `website_id`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
