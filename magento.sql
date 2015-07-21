@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?17 �?14:12
+-- 生成日期: 2015 �?07 �?21 �?15:59
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `adminnotification_inbox` (
   KEY `IDX_ADMINNOTIFICATION_INBOX_SEVERITY` (`severity`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_READ` (`is_read`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_REMOVE` (`is_remove`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=91 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=93 ;
 
 --
 -- 转存表中的数据 `adminnotification_inbox`
@@ -137,7 +137,9 @@ INSERT INTO `adminnotification_inbox` (`notification_id`, `severity`, `date_adde
 (87, 1, '2015-04-23 11:43:31', 'Urgent: Immediately install Magento critical security patches', 'It is critical for you to download and install 2 previously-released security patches (SUPEE-5344 and SUPEE-1533) from the Magento Community Edition download page (https://www.magentocommerce.com/products/downloads/magento/).  Please do this immediately, as Check Point Software Technologies has published a technical description of how they discovered the issue, which we feel might serve as a tutorial for implementing an attack against your website. ', 'https://www.magentocommerce.com/products/downloads/magento/', 0, 0),
 (88, 1, '2015-05-14 16:34:01', 'Important: New Magento Security Patch - Install it Now', 'It is important for you to download and install a new security patch (SUPEE-5994) from the Magento Community Edition download page (https://www.magentocommerce.com/products/downloads/magento/).  Please apply this critical update immediately to help protect your site from exposure to multiple security vulnerabilities impacting all versions of the Magento Community Edition software. Please note that this patch should be installed in addition to the recent Shoplift patch (SUPEE-5344).', 'https://www.magentocommerce.com/products/downloads/magento/', 0, 0),
 (89, 4, '2015-07-07 08:28:25', 'Now available:  Enhanced site quality and security with Community Edition 1.9.2', 'Magento Community Edition 1.9.2 is now available for download and features over 105 product improvements, nearly 170 automated functional tests to help internal development teams improve implementation quality and time to market, and several security enhancements. Read our blog announcement for more information (http://magento.com/blog/magento-news/magento-community-edition-192-now-available), or go to the Community Edition download page to get the software today (https://www.magentocommerce.com/products/downloads/magento/).', 'https://www.magentocommerce.com/products/downloads/magento/', 0, 0),
-(90, 1, '2015-07-07 09:08:05', 'July 7, 2015: New Magento Security Patch (SUPEE-6285) – Install Immediately', 'Today we are providing a new security patch (SUPEE-6285) that addresses critical security vulnerabilities. The patch is available for Community Edition 1.4.1 to 1.9.1.1 and is part of the core code of our latest release, Community Edition 1.9.2, available for download today.  PLEASE NOTE:  You must first implement SUPEE-5994 to ensure SUPEE-6285 works properly. Download Community Edition 1.9.2 or the patch from the Community Edition download page: https://www.magentocommerce.com/products/downloads/magento/  ', 'https://www.magentocommerce.com/products/downloads/magento/', 0, 0);
+(90, 1, '2015-07-07 09:08:05', 'July 7, 2015: New Magento Security Patch (SUPEE-6285) – Install Immediately', 'Today we are providing a new security patch (SUPEE-6285) that addresses critical security vulnerabilities. The patch is available for Community Edition 1.4.1 to 1.9.1.1 and is part of the core code of our latest release, Community Edition 1.9.2, available for download today.  PLEASE NOTE:  You must first implement SUPEE-5994 to ensure SUPEE-6285 works properly. Download Community Edition 1.9.2 or the patch from the Community Edition download page: https://www.magentocommerce.com/products/downloads/magento/  ', 'https://www.magentocommerce.com/products/downloads/magento/', 0, 0),
+(91, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(92, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -236,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 --
 
 INSERT INTO `admin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-16 03:44:45', 3, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
+(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-18 05:27:33', 5, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3544,7 +3546,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity_varchar` (
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Varchar' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Varchar' AUTO_INCREMENT=14 ;
 
 --
 -- 转存表中的数据 `customer_entity_varchar`
@@ -3558,7 +3560,12 @@ INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_
 (5, 1, 5, 2, 'daemon'),
 (6, 1, 7, 2, 'wang'),
 (7, 1, 12, 2, '11b0966cca9d7d3cfca9fa2ba61f0206:JLkJTJqFjsLEL8tlcM0lXf2hO0VhuiUQ'),
-(8, 1, 3, 2, 'Default Store View');
+(8, 1, 3, 2, 'Default Store View'),
+(9, 1, 132, 1, '15151834774'),
+(10, 1, 133, 1, '1990-01-01 00:00:00'),
+(11, 1, 134, 1, '1'),
+(12, 1, 135, 1, '/image/a.jpg'),
+(13, 1, 136, 1, 'å“ˆå“ˆå“ˆ');
 
 -- --------------------------------------------------------
 
@@ -3695,6 +3702,54 @@ INSERT INTO `customer_group` (`customer_group_id`, `customer_group_code`, `tax_c
 (1, 'General', 3),
 (2, 'Wholesale', 3),
 (3, 'Retailer', 3);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `custom_activity_cards`
+--
+
+CREATE TABLE IF NOT EXISTS `custom_activity_cards` (
+  `mobile` varchar(20) NOT NULL COMMENT 'Phone number',
+  `card_count` int(2) NOT NULL DEFAULT '0' COMMENT 'The count of cards',
+  `status` smallint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'Status, 2,used,1,enabled 0,disabled',
+  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
+  `last_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last update date',
+  PRIMARY KEY (`mobile`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 转存表中的数据 `custom_activity_cards`
+--
+
+INSERT INTO `custom_activity_cards` (`mobile`, `card_count`, `status`, `creation_date`, `last_update_date`) VALUES
+('15151834774', 7, 2, '2015-07-21 02:28:17', '2015-07-21 02:32:01');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `custom_promotions`
+--
+
+CREATE TABLE IF NOT EXISTS `custom_promotions` (
+  `promotion_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Promotion id',
+  `coupon_id` int(10) unsigned NOT NULL COMMENT 'Coupon id',
+  `mobile` varchar(20) NOT NULL COMMENT 'Phone number',
+  `catalog` varchar(20) DEFAULT NULL COMMENT 'Catalog',
+  `enable_flag` smallint(1) unsigned NOT NULL COMMENT 'Enable flag, 1,enabled 0,disabled',
+  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
+  `last_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last update date',
+  PRIMARY KEY (`promotion_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- 转存表中的数据 `custom_promotions`
+--
+
+INSERT INTO `custom_promotions` (`promotion_id`, `coupon_id`, `mobile`, `catalog`, `enable_flag`, `creation_date`, `last_update_date`) VALUES
+(5, 4, '15151834774', '', 0, '2015-07-19 14:23:07', '2015-07-19 14:23:07'),
+(6, 5, '15151834774', '', 0, '2015-07-19 14:23:10', '2015-07-19 14:23:10'),
+(7, 2, '15151834774', '', 1, '2015-07-21 03:36:14', '2015-07-21 03:36:14');
 
 -- --------------------------------------------------------
 
@@ -5336,7 +5391,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=132 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=137 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -5473,7 +5528,12 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (128, 4, 'links_purchased_separately', NULL, NULL, 'int', NULL, NULL, NULL, 'Links can be purchased separately', NULL, NULL, 1, 0, NULL, 0, NULL),
 (129, 4, 'samples_title', NULL, NULL, 'varchar', NULL, NULL, NULL, 'Samples title', NULL, NULL, 1, 0, NULL, 0, NULL),
 (130, 4, 'links_title', NULL, NULL, 'varchar', NULL, NULL, NULL, 'Links title', NULL, NULL, 1, 0, NULL, 0, NULL),
-(131, 4, 'links_exist', NULL, NULL, 'int', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '0', 0, NULL);
+(131, 4, 'links_exist', NULL, NULL, 'int', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '0', 0, NULL),
+(132, 1, 'mobile', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Phone Number', NULL, NULL, 0, 0, NULL, 0, NULL),
+(133, 1, 'birthday', NULL, NULL, 'datetime', NULL, NULL, 'date', 'Birthday', NULL, NULL, 0, 0, NULL, 0, NULL),
+(134, 1, 'sex', NULL, NULL, 'varchar', NULL, NULL, 'select', 'Sex', NULL, NULL, 0, 0, NULL, 0, NULL),
+(135, 1, 'myimage', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(136, 1, 'nickname', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Nick Name', NULL, NULL, 0, 0, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -5647,7 +5707,7 @@ CREATE TABLE IF NOT EXISTS `eav_entity_attribute` (
   UNIQUE KEY `UNQ_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_GROUP_ID_ATTRIBUTE_ID` (`attribute_group_id`,`attribute_id`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_SET_ID_SORT_ORDER` (`attribute_set_id`,`sort_order`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=130 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=135 ;
 
 --
 -- 转存表中的数据 `eav_entity_attribute`
@@ -5782,7 +5842,12 @@ INSERT INTO `eav_entity_attribute` (`entity_attribute_id`, `entity_type_id`, `at
 (126, 4, 4, 7, 128, 26),
 (127, 4, 4, 7, 129, 27),
 (128, 4, 4, 7, 130, 28),
-(129, 4, 4, 7, 131, 29);
+(129, 4, 4, 7, 131, 29),
+(130, 1, 1, 1, 132, 0),
+(131, 1, 1, 1, 133, 0),
+(132, 1, 1, 1, 134, 0),
+(133, 1, 1, 1, 135, 0),
+(134, 1, 1, 1, 136, 0);
 
 -- --------------------------------------------------------
 
@@ -7343,7 +7408,7 @@ CREATE TABLE IF NOT EXISTS `salesrule_coupon` (
 --
 
 INSERT INTO `salesrule_coupon` (`coupon_id`, `rule_id`, `code`, `usage_limit`, `usage_per_customer`, `times_used`, `expiration_date`, `is_primary`, `created_at`, `type`) VALUES
-(1, 1, 'XAS6381WJC7R', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
+(1, 1, 'XAS6381WJC7R', 1, 1, 0, '2015-07-16 16:00:00', NULL, '2015-07-16 04:06:59', 1),
 (2, 1, '7ZJIJCWQ1BUT', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
 (3, 1, 'K14G8LXUCBFV', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
 (4, 1, '1YC1DK052FTR', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
