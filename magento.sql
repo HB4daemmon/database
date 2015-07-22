@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?22 �?06:38
+-- 生成日期: 2015 �?07 �?22 �?06:43
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -7193,7 +7193,7 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`log_id`),
   KEY `IDX_LOG_CUSTOMER_VISITOR_ID` (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `log_customer`
@@ -7201,7 +7201,8 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
 
 INSERT INTO `log_customer` (`log_id`, `visitor_id`, `customer_id`, `login_at`, `logout_at`, `store_id`) VALUES
 (1, 2, 1, '2015-07-16 03:50:30', NULL, 1),
-(2, 3, 2, '2015-07-17 04:11:52', NULL, 1);
+(2, 3, 2, '2015-07-17 04:11:52', NULL, 1),
+(3, 4, 1, '2015-07-21 20:40:20', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -7295,7 +7296,23 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (11, 4, '2015-07-21 20:29:39'),
 (12, 4, '2015-07-21 20:29:42'),
 (13, 4, '2015-07-21 20:30:17'),
-(14, 4, '2015-07-21 20:30:20');
+(14, 4, '2015-07-21 20:30:20'),
+(15, 4, '2015-07-21 20:40:09'),
+(16, 4, '2015-07-21 20:40:20'),
+(17, 4, '2015-07-21 20:40:23'),
+(18, 4, '2015-07-21 20:40:31'),
+(19, 4, '2015-07-21 20:40:38'),
+(20, 4, '2015-07-21 20:40:40'),
+(21, 4, '2015-07-21 20:41:05'),
+(22, 4, '2015-07-21 20:41:06'),
+(23, 4, '2015-07-21 20:42:31'),
+(24, 4, '2015-07-21 20:42:33'),
+(25, 4, '2015-07-21 20:42:34'),
+(26, 4, '2015-07-21 20:42:35'),
+(27, 4, '2015-07-21 20:43:25'),
+(28, 4, '2015-07-21 20:43:26'),
+(29, 4, '2015-07-21 20:43:37'),
+(30, 4, '2015-07-21 20:43:38');
 
 -- --------------------------------------------------------
 
@@ -7308,7 +7325,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=31 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -7328,7 +7345,23 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (11, 'http://localhost/magento/index.php/catalog/category/view/id/3/', 'http://localhost/magento/'),
 (12, 'http://localhost/magento/index.php/catalog/category/view/id/4/', 'http://localhost/magento/index.php/catalog/category/view/id/3/'),
 (13, 'http://localhost/magento/index.php/', 'http://localhost/magento/index.php/catalog/category/view/id/4/'),
-(14, 'http://localhost/magento/index.php/catalog/category/view/id/3/', 'http://localhost/magento/index.php/');
+(14, 'http://localhost/magento/index.php/catalog/category/view/id/3/', 'http://localhost/magento/index.php/'),
+(15, 'http://localhost/magento/index.php/customer/account/login/', 'http://localhost/magento/index.php/catalog/category/view/id/3/'),
+(16, 'http://localhost/magento/index.php/customer/account/loginPost/', 'http://localhost/magento/index.php/customer/account/login/'),
+(17, 'http://localhost/magento/index.php/customer/account/', 'http://localhost/magento/index.php/customer/account/login/'),
+(18, 'http://localhost/magento/index.php/catalog/category/view/id/3', NULL),
+(19, 'http://localhost/magento/index.php/checkout/cart/add/uenc/aHR0cDovL2xvY2FsaG9zdC9tYWdlbnRvL2luZGV4LnBocC8tLmh0bWw,/product/1/form_key/ngUMjMvgVKRSBJ0H/', 'http://localhost/magento/index.php/-.html'),
+(20, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/-.html'),
+(21, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(22, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(23, 'http://localhost/magento/index.php/checkout/cart/updatePost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(24, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(25, 'http://localhost/magento/index.php/checkout/cart/updatePost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(26, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(27, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(28, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(29, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(30, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/');
 
 -- --------------------------------------------------------
 
@@ -8004,7 +8037,14 @@ CREATE TABLE IF NOT EXISTS `report_event` (
   KEY `IDX_REPORT_EVENT_OBJECT_ID` (`object_id`),
   KEY `IDX_REPORT_EVENT_SUBTYPE` (`subtype`),
   KEY `IDX_REPORT_EVENT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Event Table' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `report_event`
+--
+
+INSERT INTO `report_event` (`event_id`, `logged_at`, `event_type_id`, `object_id`, `subject_id`, `subtype`, `store_id`) VALUES
+(1, '2015-07-21 20:40:38', 4, 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -8288,7 +8328,7 @@ CREATE TABLE IF NOT EXISTS `salesrule_coupon` (
   UNIQUE KEY `UNQ_SALESRULE_COUPON_CODE` (`code`),
   UNIQUE KEY `UNQ_SALESRULE_COUPON_RULE_ID_IS_PRIMARY` (`rule_id`,`is_primary`),
   KEY `IDX_SALESRULE_COUPON_RULE_ID` (`rule_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon' AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `salesrule_coupon`
@@ -8299,7 +8339,17 @@ INSERT INTO `salesrule_coupon` (`coupon_id`, `rule_id`, `code`, `usage_limit`, `
 (2, 1, '7ZJIJCWQ1BUT', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
 (3, 1, 'K14G8LXUCBFV', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
 (4, 1, '1YC1DK052FTR', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
-(5, 1, 'WE5E09FCXWGA', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1);
+(5, 1, 'WE5E09FCXWGA', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-16 04:06:59', 1),
+(6, 1, 'FREESHIPRSME6640TZ7F43MA0MR1', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(7, 1, 'FREESHIPVYUK6GNOAIXFEQY0SXVN', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(8, 1, 'FREESHIPO14J4DCY8VRN1OHQQIWJ', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(9, 1, 'FREESHIPTZ0VTVAKLA4H6H3H7YI8', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(10, 1, 'FREESHIPD6KUIBQXMK5XFCKYU4WO', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(11, 1, 'FREESHIP5AH1FC24UGBT8MH6COPH', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(12, 1, 'FREESHIPIQXJ0DYDA8QK5WIZS8FT', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(13, 1, 'FREESHIPG1O3KPECRGMT7CMIG03G', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(14, 1, 'FREESHIPWYKRL3SLRRIB9UMUKXX3', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1),
+(15, 1, 'FREESHIP6ERGKNIFIA3CCM71DVI1', 1, 1, 0, '2015-07-23 16:00:00', NULL, '2015-07-21 20:41:34', 1);
 
 -- --------------------------------------------------------
 
@@ -9307,7 +9357,7 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote` (
 --
 
 INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`, `is_persistent`) VALUES
-(1, 1, '2015-07-16 03:50:29', '2015-07-16 03:50:29', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'USD', 'USD', 'USD', '0.0000', '0.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'USD', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0),
+(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:37', NULL, 1, 0, 0, 1, '3.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '30.0000', '30.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '30.0000', '30.0000', '30.0000', '30.0000', 1, 0, NULL, NULL, 0),
 (2, 1, '2015-07-17 04:11:44', '2015-07-17 04:11:44', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'USD', 'USD', 'USD', '0.0000', '0.0000', NULL, 2, 3, 1, 'hb4daemon@126.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'USD', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0);
 
 -- --------------------------------------------------------
@@ -9388,8 +9438,8 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_address` (
 --
 
 INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amnt`, `shipping_incl_tax`, `base_shipping_incl_tax`, `vat_id`, `vat_is_valid`, `vat_request_id`, `vat_request_date`, `vat_request_success`, `gift_message_id`) VALUES
-(1, 1, '2015-07-16 03:50:29', '2015-07-16 03:50:29', 1, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 1, '2015-07-16 03:50:29', '2015-07-16 03:50:29', 1, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:38', 1, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:38', 1, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '6.0000', '30.0000', '30.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '30.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 2, '2015-07-17 04:11:45', '2015-07-17 04:11:45', 2, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 2, '2015-07-17 04:11:45', '2015-07-17 04:11:45', 2, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -9511,7 +9561,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_item` (
   KEY `IDX_SALES_FLAT_QUOTE_ITEM_PRODUCT_ID` (`product_id`),
   KEY `IDX_SALES_FLAT_QUOTE_ITEM_QUOTE_ID` (`quote_id`),
   KEY `IDX_SALES_FLAT_QUOTE_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_quote_item`
+--
+
+INSERT INTO `sales_flat_quote_item` (`item_id`, `quote_id`, `created_at`, `updated_at`, `product_id`, `store_id`, `parent_item_id`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `weight`, `qty`, `price`, `base_price`, `custom_price`, `discount_percent`, `discount_amount`, `base_discount_amount`, `tax_percent`, `tax_amount`, `base_tax_amount`, `row_total`, `base_row_total`, `row_total_with_discount`, `row_weight`, `product_type`, `base_tax_before_discount`, `tax_before_discount`, `original_custom_price`, `redirect_url`, `base_cost`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `gift_message_id`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`, `weee_tax_applied`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amnt`) VALUES
+(1, 1, '2015-07-21 20:40:38', '2015-07-21 20:43:36', 1, 1, NULL, 0, 'peach', '杨山水蜜桃', NULL, NULL, NULL, 0, 0, 0, '2.0000', '3.0000', '10.0000', '10.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', '0.0000', '6.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '10.0000', '10.0000', '30.0000', '30.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL);
 
 -- --------------------------------------------------------
 
@@ -9527,7 +9584,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_item_option` (
   `value` text COMMENT 'Value',
   PRIMARY KEY (`option_id`),
   KEY `IDX_SALES_FLAT_QUOTE_ITEM_OPTION_ITEM_ID` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_quote_item_option`
+--
+
+INSERT INTO `sales_flat_quote_item_option` (`option_id`, `item_id`, `product_id`, `code`, `value`) VALUES
+(1, 1, 1, 'info_buyRequest', 'a:4:{s:4:"uenc";s:56:"aHR0cDovL2xvY2FsaG9zdC9tYWdlbnRvL2luZGV4LnBocC8tLmh0bWw,";s:7:"product";s:1:"1";s:8:"form_key";s:16:"ngUMjMvgVKRSBJ0H";s:3:"qty";i:1;}');
 
 -- --------------------------------------------------------
 
@@ -10498,7 +10562,14 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
   PRIMARY KEY (`wishlist_id`),
   UNIQUE KEY `UNQ_WISHLIST_CUSTOMER_ID` (`customer_id`),
   KEY `IDX_WISHLIST_SHARED` (`shared`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist main Table' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Wishlist main Table' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `wishlist`
+--
+
+INSERT INTO `wishlist` (`wishlist_id`, `customer_id`, `shared`, `sharing_code`, `updated_at`) VALUES
+(1, 1, 0, '158a0361c1d749ae33b65a45a3ee085a', '2015-07-21 20:42:30');
 
 -- --------------------------------------------------------
 
