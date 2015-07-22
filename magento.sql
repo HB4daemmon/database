@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?21 �?15:59
+-- 生成日期: 2015 �?07 �?22 �?05:18
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -3710,20 +3710,20 @@ INSERT INTO `customer_group` (`customer_group_id`, `customer_group_code`, `tax_c
 --
 
 CREATE TABLE IF NOT EXISTS `custom_activity_cards` (
-  `mobile` varchar(20) NOT NULL COMMENT 'Phone number',
+  `mobile` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'Phone number',
   `card_count` int(2) NOT NULL DEFAULT '0' COMMENT 'The count of cards',
   `status` smallint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'Status, 2,used,1,enabled 0,disabled',
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
   `last_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last update date',
   PRIMARY KEY (`mobile`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `custom_activity_cards`
 --
 
 INSERT INTO `custom_activity_cards` (`mobile`, `card_count`, `status`, `creation_date`, `last_update_date`) VALUES
-('15151834774', 7, 2, '2015-07-21 02:28:17', '2015-07-21 02:32:01');
+('15151834774', 7, 2, '2015-07-22 03:12:15', '2015-07-22 03:14:35');
 
 -- --------------------------------------------------------
 
@@ -3734,22 +3734,20 @@ INSERT INTO `custom_activity_cards` (`mobile`, `card_count`, `status`, `creation
 CREATE TABLE IF NOT EXISTS `custom_promotions` (
   `promotion_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Promotion id',
   `coupon_id` int(10) unsigned NOT NULL COMMENT 'Coupon id',
-  `mobile` varchar(20) NOT NULL COMMENT 'Phone number',
-  `catalog` varchar(20) DEFAULT NULL COMMENT 'Catalog',
+  `mobile` varchar(20) CHARACTER SET latin1 NOT NULL COMMENT 'Phone number',
+  `catalog` varchar(20) CHARACTER SET latin1 DEFAULT NULL COMMENT 'Catalog',
   `enable_flag` smallint(1) unsigned NOT NULL COMMENT 'Enable flag, 1,enabled 0,disabled',
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
   `last_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last update date',
   PRIMARY KEY (`promotion_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `custom_promotions`
 --
 
 INSERT INTO `custom_promotions` (`promotion_id`, `coupon_id`, `mobile`, `catalog`, `enable_flag`, `creation_date`, `last_update_date`) VALUES
-(5, 4, '15151834774', '', 0, '2015-07-19 14:23:07', '2015-07-19 14:23:07'),
-(6, 5, '15151834774', '', 0, '2015-07-19 14:23:10', '2015-07-19 14:23:10'),
-(7, 2, '15151834774', '', 1, '2015-07-21 03:36:14', '2015-07-21 03:36:14');
+(8, 2, '15151834774', '', 1, '2015-07-22 02:57:08', '2015-07-22 02:57:08');
 
 -- --------------------------------------------------------
 
