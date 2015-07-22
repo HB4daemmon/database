@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?22 �?06:43
+-- 生成日期: 2015 �?07 �?22 �?06:47
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -471,7 +471,7 @@ CREATE TABLE IF NOT EXISTS `cataloginventory_stock_item` (
 --
 
 INSERT INTO `cataloginventory_stock_item` (`item_id`, `product_id`, `stock_id`, `qty`, `min_qty`, `use_config_min_qty`, `is_qty_decimal`, `backorders`, `use_config_backorders`, `min_sale_qty`, `use_config_min_sale_qty`, `max_sale_qty`, `use_config_max_sale_qty`, `is_in_stock`, `low_stock_date`, `notify_stock_qty`, `use_config_notify_stock_qty`, `manage_stock`, `use_config_manage_stock`, `stock_status_changed_auto`, `use_config_qty_increments`, `qty_increments`, `use_config_enable_qty_inc`, `enable_qty_increments`, `is_decimal_divided`) VALUES
-(1, 1, 1, '1000.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, '1.0000', 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
+(1, 1, 1, '997.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, '1.0000', 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (2, 2, 1, '1000.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, '1.0000', 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (3, 3, 1, '1000.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, '1.0000', 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
 (4, 4, 1, '1000.0000', '0.0000', 1, 0, 0, 1, '1.0000', 1, '0.0000', 1, 1, NULL, '1.0000', 1, 0, 1, 0, 1, '0.0000', 1, 0, 0),
@@ -514,7 +514,7 @@ CREATE TABLE IF NOT EXISTS `cataloginventory_stock_status` (
 --
 
 INSERT INTO `cataloginventory_stock_status` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES
-(1, 1, 1, '1000.0000', 1),
+(1, 1, 1, '997.0000', 1),
 (2, 1, 1, '1000.0000', 1),
 (3, 1, 1, '1000.0000', 1),
 (4, 1, 1, '1000.0000', 1),
@@ -4102,7 +4102,14 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity` (
   `is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
   PRIMARY KEY (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `customer_address_entity`
+--
+
+INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES
+(1, 2, 0, NULL, 1, '2015-07-21 20:47:14', '2015-07-21 20:47:14', 1);
 
 -- --------------------------------------------------------
 
@@ -4162,7 +4169,14 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_int` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Int' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Int' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `customer_address_entity_int`
+--
+
+INSERT INTO `customer_address_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
+(1, 2, 29, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -4181,7 +4195,14 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_text` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ENTITY_TYPE_ID` (`entity_type_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Text' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Text' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `customer_address_entity_text`
+--
+
+INSERT INTO `customer_address_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
+(1, 2, 25, 1, 'address1\naddress2');
 
 -- --------------------------------------------------------
 
@@ -4201,7 +4222,20 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_varchar` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Varchar' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Varchar' AUTO_INCREMENT=8 ;
+
+--
+-- 转存表中的数据 `customer_address_entity_varchar`
+--
+
+INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
+(1, 2, 20, 1, 'daemon'),
+(2, 2, 22, 1, 'wang'),
+(3, 2, 26, 1, 'Nanjing'),
+(4, 2, 28, 1, 'Jiangsu'),
+(5, 2, 30, 1, '210000'),
+(6, 2, 27, 1, 'CN'),
+(7, 2, 31, 1, '15151834774');
 
 -- --------------------------------------------------------
 
@@ -4316,7 +4350,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity` (
 --
 
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`, `disable_auto_group_change`) VALUES
-(1, 1, 0, 1, 'hb4daemon@163.com', 1, NULL, 1, '2015-07-16 03:50:28', '2015-07-16 03:50:28', 1, 0),
+(1, 1, 0, 1, 'hb4daemon@163.com', 1, NULL, 1, '2015-07-16 03:50:28', '2015-07-21 20:47:14', 1, 0),
 (2, 1, 0, 1, 'hb4daemon@126.com', 1, NULL, 1, '2015-07-17 04:11:42', '2015-07-17 04:11:42', 1, 0);
 
 -- --------------------------------------------------------
@@ -4377,7 +4411,15 @@ CREATE TABLE IF NOT EXISTS `customer_entity_int` (
   KEY `IDX_CUSTOMER_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `customer_entity_int`
+--
+
+INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
+(1, 1, 13, 1, 1),
+(2, 1, 14, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6801,7 +6843,14 @@ CREATE TABLE IF NOT EXISTS `eav_entity_store` (
   PRIMARY KEY (`entity_store_id`),
   KEY `IDX_EAV_ENTITY_STORE_ENTITY_TYPE_ID` (`entity_type_id`),
   KEY `IDX_EAV_ENTITY_STORE_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Eav Entity Store' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Store' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `eav_entity_store`
+--
+
+INSERT INTO `eav_entity_store` (`entity_store_id`, `entity_type_id`, `store_id`, `increment_prefix`, `increment_last_id`) VALUES
+(1, 5, 1, '1', '100000001');
 
 -- --------------------------------------------------------
 
@@ -7312,7 +7361,21 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (27, 4, '2015-07-21 20:43:25'),
 (28, 4, '2015-07-21 20:43:26'),
 (29, 4, '2015-07-21 20:43:37'),
-(30, 4, '2015-07-21 20:43:38');
+(30, 4, '2015-07-21 20:43:38'),
+(31, 4, '2015-07-21 20:46:05'),
+(32, 4, '2015-07-21 20:46:07'),
+(33, 4, '2015-07-21 20:46:13'),
+(34, 4, '2015-07-21 20:46:59'),
+(35, 4, '2015-07-21 20:47:00'),
+(36, 4, '2015-07-21 20:47:00'),
+(37, 4, '2015-07-21 20:47:01'),
+(38, 4, '2015-07-21 20:47:03'),
+(39, 4, '2015-07-21 20:47:04'),
+(40, 4, '2015-07-21 20:47:04'),
+(41, 4, '2015-07-21 20:47:10'),
+(42, 4, '2015-07-21 20:47:10'),
+(43, 4, '2015-07-21 20:47:20'),
+(44, 4, '2015-07-21 20:47:21');
 
 -- --------------------------------------------------------
 
@@ -7325,7 +7388,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=45 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -7361,7 +7424,21 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (27, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
 (28, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
 (29, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
-(30, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/');
+(30, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(31, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
+(32, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(33, 'http://localhost/magento/index.php/checkout/onepage/', 'http://localhost/magento/index.php/checkout/cart/'),
+(34, 'http://localhost/magento/index.php/checkout/onepage/saveBilling/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(35, 'http://localhost/magento/index.php/checkout/onepage/getAdditional/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(36, 'http://localhost/magento/index.php/checkout/onepage/progress/?prevStep=shipping', 'http://localhost/magento/index.php/checkout/onepage/'),
+(37, 'http://localhost/magento/index.php/checkout/onepage/progress/?prevStep=billing', 'http://localhost/magento/index.php/checkout/onepage/'),
+(38, 'http://localhost/magento/index.php/checkout/onepage/saveShippingMethod/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(39, 'http://localhost/magento/index.php/checkout/onepage/progress/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(40, 'http://localhost/magento/index.php/checkout/onepage/progress/?prevStep=shipping_method', 'http://localhost/magento/index.php/checkout/onepage/'),
+(41, 'http://localhost/magento/index.php/checkout/onepage/savePayment/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(42, 'http://localhost/magento/index.php/checkout/onepage/progress/?prevStep=payment', 'http://localhost/magento/index.php/checkout/onepage/'),
+(43, 'http://localhost/magento/index.php/checkout/onepage/saveOrder/form_key/ngUMjMvgVKRSBJ0H/', 'http://localhost/magento/index.php/checkout/onepage/'),
+(44, 'http://localhost/magento/index.php/checkout/onepage/success/', 'http://localhost/magento/index.php/checkout/onepage/');
 
 -- --------------------------------------------------------
 
@@ -9033,7 +9110,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order` (
   KEY `IDX_SALES_FLAT_ORDER_EXT_ORDER_ID` (`ext_order_id`),
   KEY `IDX_SALES_FLAT_ORDER_QUOTE_ID` (`quote_id`),
   KEY `IDX_SALES_FLAT_ORDER_UPDATED_AT` (`updated_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_order`
+--
+
+INSERT INTO `sales_flat_order` (`entity_id`, `state`, `status`, `coupon_code`, `protect_code`, `shipping_description`, `is_virtual`, `store_id`, `customer_id`, `base_discount_amount`, `base_discount_canceled`, `base_discount_invoiced`, `base_discount_refunded`, `base_grand_total`, `base_shipping_amount`, `base_shipping_canceled`, `base_shipping_invoiced`, `base_shipping_refunded`, `base_shipping_tax_amount`, `base_shipping_tax_refunded`, `base_subtotal`, `base_subtotal_canceled`, `base_subtotal_invoiced`, `base_subtotal_refunded`, `base_tax_amount`, `base_tax_canceled`, `base_tax_invoiced`, `base_tax_refunded`, `base_to_global_rate`, `base_to_order_rate`, `base_total_canceled`, `base_total_invoiced`, `base_total_invoiced_cost`, `base_total_offline_refunded`, `base_total_online_refunded`, `base_total_paid`, `base_total_qty_ordered`, `base_total_refunded`, `discount_amount`, `discount_canceled`, `discount_invoiced`, `discount_refunded`, `grand_total`, `shipping_amount`, `shipping_canceled`, `shipping_invoiced`, `shipping_refunded`, `shipping_tax_amount`, `shipping_tax_refunded`, `store_to_base_rate`, `store_to_order_rate`, `subtotal`, `subtotal_canceled`, `subtotal_invoiced`, `subtotal_refunded`, `tax_amount`, `tax_canceled`, `tax_invoiced`, `tax_refunded`, `total_canceled`, `total_invoiced`, `total_offline_refunded`, `total_online_refunded`, `total_paid`, `total_qty_ordered`, `total_refunded`, `can_ship_partially`, `can_ship_partially_item`, `customer_is_guest`, `customer_note_notify`, `billing_address_id`, `customer_group_id`, `edit_increment`, `email_sent`, `forced_shipment_with_invoice`, `payment_auth_expiration`, `quote_address_id`, `quote_id`, `shipping_address_id`, `adjustment_negative`, `adjustment_positive`, `base_adjustment_negative`, `base_adjustment_positive`, `base_shipping_discount_amount`, `base_subtotal_incl_tax`, `base_total_due`, `payment_authorization_amount`, `shipping_discount_amount`, `subtotal_incl_tax`, `total_due`, `weight`, `customer_dob`, `increment_id`, `applied_rule_ids`, `base_currency_code`, `customer_email`, `customer_firstname`, `customer_lastname`, `customer_middlename`, `customer_prefix`, `customer_suffix`, `customer_taxvat`, `discount_description`, `ext_customer_id`, `ext_order_id`, `global_currency_code`, `hold_before_state`, `hold_before_status`, `order_currency_code`, `original_increment_id`, `relation_child_id`, `relation_child_real_id`, `relation_parent_id`, `relation_parent_real_id`, `remote_ip`, `shipping_method`, `store_currency_code`, `store_name`, `x_forwarded_for`, `customer_note`, `created_at`, `updated_at`, `total_item_count`, `customer_gender`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amnt`, `hidden_tax_invoiced`, `base_hidden_tax_invoiced`, `hidden_tax_refunded`, `base_hidden_tax_refunded`, `shipping_incl_tax`, `base_shipping_incl_tax`, `coupon_rule_name`, `paypal_ipn_customer_notified`, `gift_message_id`) VALUES
+(1, 'new', 'pending', 'FREESHIPRSME6640TZ7F43MA0MR1', 'e8ea09', 'Flat Rate - Fixed', 0, 1, 1, '0.0000', NULL, NULL, NULL, '30.0000', '0.0000', NULL, NULL, NULL, '0.0000', NULL, '30.0000', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, '1.0000', '1.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, '30.0000', '0.0000', NULL, NULL, NULL, '0.0000', NULL, '1.0000', '1.0000', '30.0000', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3.0000', NULL, NULL, NULL, 0, 1, 1, 1, NULL, 1, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, '0.0000', '30.0000', NULL, NULL, '0.0000', '30.0000', NULL, '6.0000', NULL, '100000001', '1', 'CNY', 'hb4daemon@163.com', 'daemon', 'wang', NULL, NULL, NULL, NULL, 'FREESHIPRSME6640TZ7F43MA0MR1', NULL, NULL, 'CNY', NULL, NULL, 'CNY', NULL, NULL, NULL, NULL, NULL, '::1', 'flatrate_flatrate', 'CNY', 'Main Website\nMain Website Store\nDefault Store View', NULL, NULL, '2015-07-21 20:47:15', '2015-07-21 20:47:16', 1, NULL, '0.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, '0.0000', '0.0000', 'Free shipping', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -9070,7 +9154,15 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order_address` (
   `vat_request_success` smallint(6) DEFAULT NULL COMMENT 'Vat Request Success',
   PRIMARY KEY (`entity_id`),
   KEY `IDX_SALES_FLAT_ORDER_ADDRESS_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Address' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Address' AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `sales_flat_order_address`
+--
+
+INSERT INTO `sales_flat_order_address` (`entity_id`, `parent_id`, `customer_address_id`, `quote_address_id`, `region_id`, `customer_id`, `fax`, `region`, `postcode`, `lastname`, `street`, `city`, `email`, `telephone`, `country_id`, `firstname`, `address_type`, `prefix`, `middlename`, `suffix`, `company`, `vat_id`, `vat_is_valid`, `vat_request_id`, `vat_request_date`, `vat_request_success`) VALUES
+(1, 1, 1, NULL, NULL, 1, NULL, 'Jiangsu', '210000', 'wang', 'address1\naddress2', 'Nanjing', 'hb4daemon@163.com', '15151834774', 'CN', 'daemon', 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 1, NULL, NULL, NULL, 1, NULL, 'Jiangsu', '210000', 'wang', 'address1\naddress2', 'Nanjing', 'hb4daemon@163.com', '15151834774', 'CN', 'daemon', 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -9109,6 +9201,13 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order_grid` (
   KEY `IDX_SALES_FLAT_ORDER_GRID_CUSTOMER_ID` (`customer_id`),
   KEY `IDX_SALES_FLAT_ORDER_GRID_UPDATED_AT` (`updated_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Grid';
+
+--
+-- 转存表中的数据 `sales_flat_order_grid`
+--
+
+INSERT INTO `sales_flat_order_grid` (`entity_id`, `status`, `store_id`, `store_name`, `customer_id`, `base_grand_total`, `base_total_paid`, `grand_total`, `total_paid`, `increment_id`, `base_currency_code`, `order_currency_code`, `shipping_name`, `billing_name`, `created_at`, `updated_at`) VALUES
+(1, 'pending', 1, 'Main Website\nMain Website Store\nDefault Store View', 1, '30.0000', NULL, '30.0000', NULL, '100000001', 'CNY', 'CNY', 'daemon wang', 'daemon wang', '2015-07-21 20:47:15', '2015-07-21 20:47:16');
 
 -- --------------------------------------------------------
 
@@ -9201,7 +9300,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order_item` (
   PRIMARY KEY (`item_id`),
   KEY `IDX_SALES_FLAT_ORDER_ITEM_ORDER_ID` (`order_id`),
   KEY `IDX_SALES_FLAT_ORDER_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Item' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Item' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_order_item`
+--
+
+INSERT INTO `sales_flat_order_item` (`item_id`, `order_id`, `parent_item_id`, `quote_item_id`, `store_id`, `created_at`, `updated_at`, `product_id`, `product_type`, `product_options`, `weight`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `qty_backordered`, `qty_canceled`, `qty_invoiced`, `qty_ordered`, `qty_refunded`, `qty_shipped`, `base_cost`, `price`, `base_price`, `original_price`, `base_original_price`, `tax_percent`, `tax_amount`, `base_tax_amount`, `tax_invoiced`, `base_tax_invoiced`, `discount_percent`, `discount_amount`, `base_discount_amount`, `discount_invoiced`, `base_discount_invoiced`, `amount_refunded`, `base_amount_refunded`, `row_total`, `base_row_total`, `row_invoiced`, `base_row_invoiced`, `row_weight`, `base_tax_before_discount`, `tax_before_discount`, `ext_order_item_id`, `locked_do_invoice`, `locked_do_ship`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `hidden_tax_invoiced`, `base_hidden_tax_invoiced`, `hidden_tax_refunded`, `base_hidden_tax_refunded`, `is_nominal`, `tax_canceled`, `hidden_tax_canceled`, `tax_refunded`, `base_tax_refunded`, `discount_refunded`, `base_discount_refunded`, `gift_message_id`, `gift_message_available`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amnt`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `weee_tax_applied`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`) VALUES
+(1, 1, NULL, 1, 1, '2015-07-21 20:47:16', '2015-07-21 20:47:16', 1, 'simple', 'a:1:{s:15:"info_buyRequest";a:4:{s:4:"uenc";s:56:"aHR0cDovL2xvY2FsaG9zdC9tYWdlbnRvL2luZGV4LnBocC8tLmh0bWw,";s:7:"product";s:1:"1";s:8:"form_key";s:16:"ngUMjMvgVKRSBJ0H";s:3:"qty";i:1;}}', '2.0000', 0, 'peach', '杨山水蜜桃', NULL, '1', NULL, 0, 0, 0, NULL, '0.0000', '0.0000', '3.0000', '0.0000', '0.0000', NULL, '10.0000', '10.0000', '10.0000', '10.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', '0.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, '10.0000', '10.0000', '30.0000', '30.0000', '0.0000', '0.0000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', '0.0000');
 
 -- --------------------------------------------------------
 
@@ -9267,7 +9373,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order_payment` (
   `additional_information` text COMMENT 'Additional Information',
   PRIMARY KEY (`entity_id`),
   KEY `IDX_SALES_FLAT_ORDER_PAYMENT_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Payment' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Payment' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_order_payment`
+--
+
+INSERT INTO `sales_flat_order_payment` (`entity_id`, `parent_id`, `base_shipping_captured`, `shipping_captured`, `amount_refunded`, `base_amount_paid`, `amount_canceled`, `base_amount_authorized`, `base_amount_paid_online`, `base_amount_refunded_online`, `base_shipping_amount`, `shipping_amount`, `amount_paid`, `amount_authorized`, `base_amount_ordered`, `base_shipping_refunded`, `shipping_refunded`, `base_amount_refunded`, `amount_ordered`, `base_amount_canceled`, `quote_payment_id`, `additional_data`, `cc_exp_month`, `cc_ss_start_year`, `echeck_bank_name`, `method`, `cc_debug_request_body`, `cc_secure_verify`, `protection_eligibility`, `cc_approval`, `cc_last4`, `cc_status_description`, `echeck_type`, `cc_debug_response_serialized`, `cc_ss_start_month`, `echeck_account_type`, `last_trans_id`, `cc_cid_status`, `cc_owner`, `cc_type`, `po_number`, `cc_exp_year`, `cc_status`, `echeck_routing_number`, `account_status`, `anet_trans_method`, `cc_debug_response_body`, `cc_ss_issue`, `echeck_account_name`, `cc_avs_status`, `cc_number_enc`, `cc_trans_id`, `paybox_request_number`, `address_status`, `additional_information`) VALUES
+(1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, '30.0000', NULL, NULL, NULL, '30.0000', NULL, NULL, NULL, '0', '0', NULL, 'checkmo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -9287,7 +9400,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_order_status_history` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_PARENT_ID` (`parent_id`),
   KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_CREATED_AT` (`created_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Status History' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Status History' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_order_status_history`
+--
+
+INSERT INTO `sales_flat_order_status_history` (`entity_id`, `parent_id`, `is_customer_notified`, `is_visible_on_front`, `comment`, `status`, `created_at`, `entity_name`) VALUES
+(1, 1, 1, 0, NULL, 'pending', '2015-07-21 20:47:16', 'order');
 
 -- --------------------------------------------------------
 
@@ -9357,7 +9477,7 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote` (
 --
 
 INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_at`, `converted_at`, `is_active`, `is_virtual`, `is_multi_shipping`, `items_count`, `items_qty`, `orig_order_id`, `store_to_base_rate`, `store_to_quote_rate`, `base_currency_code`, `store_currency_code`, `quote_currency_code`, `grand_total`, `base_grand_total`, `checkout_method`, `customer_id`, `customer_tax_class_id`, `customer_group_id`, `customer_email`, `customer_prefix`, `customer_firstname`, `customer_middlename`, `customer_lastname`, `customer_suffix`, `customer_dob`, `customer_note`, `customer_note_notify`, `customer_is_guest`, `remote_ip`, `applied_rule_ids`, `reserved_order_id`, `password_hash`, `coupon_code`, `global_currency_code`, `base_to_global_rate`, `base_to_quote_rate`, `customer_taxvat`, `customer_gender`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `is_changed`, `trigger_recollect`, `ext_shipping_info`, `gift_message_id`, `is_persistent`) VALUES
-(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:37', NULL, 1, 0, 0, 1, '3.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '30.0000', '30.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '30.0000', '30.0000', '30.0000', '30.0000', 1, 0, NULL, NULL, 0),
+(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:47:19', NULL, 0, 0, 0, 1, '3.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '30.0000', '30.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', '1', '100000001', NULL, 'FREESHIPRSME6640TZ7F43MA0MR1', 'CNY', '1.0000', '1.0000', NULL, NULL, '30.0000', '30.0000', '30.0000', '30.0000', 1, 0, NULL, NULL, 0),
 (2, 1, '2015-07-17 04:11:44', '2015-07-17 04:11:44', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'USD', 'USD', 'USD', '0.0000', '0.0000', NULL, 2, 3, 1, 'hb4daemon@126.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'USD', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0);
 
 -- --------------------------------------------------------
@@ -9438,8 +9558,8 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_address` (
 --
 
 INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, `updated_at`, `customer_id`, `save_in_address_book`, `customer_address_id`, `address_type`, `email`, `prefix`, `firstname`, `middlename`, `lastname`, `suffix`, `company`, `street`, `city`, `region`, `region_id`, `postcode`, `country_id`, `telephone`, `fax`, `same_as_billing`, `free_shipping`, `collect_shipping_rates`, `shipping_method`, `shipping_description`, `weight`, `subtotal`, `base_subtotal`, `subtotal_with_discount`, `base_subtotal_with_discount`, `tax_amount`, `base_tax_amount`, `shipping_amount`, `base_shipping_amount`, `shipping_tax_amount`, `base_shipping_tax_amount`, `discount_amount`, `base_discount_amount`, `grand_total`, `base_grand_total`, `customer_notes`, `applied_taxes`, `discount_description`, `shipping_discount_amount`, `base_shipping_discount_amount`, `subtotal_incl_tax`, `base_subtotal_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `shipping_hidden_tax_amount`, `base_shipping_hidden_tax_amnt`, `shipping_incl_tax`, `base_shipping_incl_tax`, `vat_id`, `vat_is_valid`, `vat_request_id`, `vat_request_date`, `vat_request_success`, `gift_message_id`) VALUES
-(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:38', 1, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 1, '2015-07-16 03:50:29', '2015-07-21 20:43:38', 1, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '6.0000', '30.0000', '30.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '30.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(1, 1, '2015-07-16 03:50:29', '2015-07-21 20:47:15', 1, 1, 1, 'billing', 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, 'address1\naddress2', 'Nanjing', 'Jiangsu', NULL, '210000', 'CN', '15151834774', NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 1, '2015-07-16 03:50:29', '2015-07-21 20:47:15', 1, 0, NULL, 'shipping', 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, 'address1\naddress2', 'Nanjing', 'Jiangsu', NULL, '210000', 'CN', '15151834774', NULL, 1, 1, 0, 'flatrate_flatrate', 'Flat Rate - Fixed', '6.0000', '30.0000', '30.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', NULL, 'a:0:{}', 'FREESHIPRSME6640TZ7F43MA0MR1', '0.0000', '0.0000', '30.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 2, '2015-07-17 04:11:45', '2015-07-17 04:11:45', 2, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 2, '2015-07-17 04:11:45', '2015-07-17 04:11:45', 2, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -9568,7 +9688,7 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_item` (
 --
 
 INSERT INTO `sales_flat_quote_item` (`item_id`, `quote_id`, `created_at`, `updated_at`, `product_id`, `store_id`, `parent_item_id`, `is_virtual`, `sku`, `name`, `description`, `applied_rule_ids`, `additional_data`, `free_shipping`, `is_qty_decimal`, `no_discount`, `weight`, `qty`, `price`, `base_price`, `custom_price`, `discount_percent`, `discount_amount`, `base_discount_amount`, `tax_percent`, `tax_amount`, `base_tax_amount`, `row_total`, `base_row_total`, `row_total_with_discount`, `row_weight`, `product_type`, `base_tax_before_discount`, `tax_before_discount`, `original_custom_price`, `redirect_url`, `base_cost`, `price_incl_tax`, `base_price_incl_tax`, `row_total_incl_tax`, `base_row_total_incl_tax`, `hidden_tax_amount`, `base_hidden_tax_amount`, `gift_message_id`, `weee_tax_disposition`, `weee_tax_row_disposition`, `base_weee_tax_disposition`, `base_weee_tax_row_disposition`, `weee_tax_applied`, `weee_tax_applied_amount`, `weee_tax_applied_row_amount`, `base_weee_tax_applied_amount`, `base_weee_tax_applied_row_amnt`) VALUES
-(1, 1, '2015-07-21 20:40:38', '2015-07-21 20:43:36', 1, 1, NULL, 0, 'peach', '杨山水蜜桃', NULL, NULL, NULL, 0, 0, 0, '2.0000', '3.0000', '10.0000', '10.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', '0.0000', '6.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '10.0000', '10.0000', '30.0000', '30.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL);
+(1, 1, '2015-07-21 20:40:38', '2015-07-21 20:46:05', 1, 1, NULL, 0, 'peach', '杨山水蜜桃', NULL, '1', NULL, 0, 0, 0, '2.0000', '3.0000', '10.0000', '10.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '30.0000', '30.0000', '0.0000', '0.0000', 'simple', NULL, NULL, NULL, NULL, NULL, '10.0000', '10.0000', '30.0000', '30.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', '0.0000', '0.0000', 'a:0:{}', '0.0000', '0.0000', '0.0000', NULL);
 
 -- --------------------------------------------------------
 
@@ -9624,7 +9744,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_payment` (
   `paypal_correlation_id` varchar(255) DEFAULT NULL COMMENT 'Paypal Correlation Id',
   PRIMARY KEY (`payment_id`),
   KEY `IDX_SALES_FLAT_QUOTE_PAYMENT_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Payment' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Payment' AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sales_flat_quote_payment`
+--
+
+INSERT INTO `sales_flat_quote_payment` (`payment_id`, `quote_id`, `created_at`, `updated_at`, `method`, `cc_type`, `cc_number_enc`, `cc_last4`, `cc_cid_enc`, `cc_owner`, `cc_exp_month`, `cc_exp_year`, `cc_ss_owner`, `cc_ss_start_month`, `cc_ss_start_year`, `po_number`, `additional_data`, `cc_ss_issue`, `additional_information`, `paypal_payer_id`, `paypal_payer_status`, `paypal_correlation_id`) VALUES
+(1, 1, '2015-07-21 20:46:12', '2015-07-21 20:47:15', 'checkmo', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -9647,7 +9774,14 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_shipping_rate` (
   `method_title` text COMMENT 'Method Title',
   PRIMARY KEY (`rate_id`),
   KEY `IDX_SALES_FLAT_QUOTE_SHIPPING_RATE_ADDRESS_ID` (`address_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Shipping Rate' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Shipping Rate' AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `sales_flat_quote_shipping_rate`
+--
+
+INSERT INTO `sales_flat_quote_shipping_rate` (`rate_id`, `address_id`, `created_at`, `updated_at`, `carrier`, `carrier_title`, `code`, `method`, `method_description`, `price`, `error_message`, `method_title`) VALUES
+(3, 2, '2015-07-21 20:47:09', '2015-07-21 20:47:15', 'flatrate', 'Flat Rate', 'flatrate_flatrate', 'flatrate', NULL, '0.0000', NULL, 'Fixed');
 
 -- --------------------------------------------------------
 
