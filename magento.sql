@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?23 �?10:18
+-- 生成日期: 2015 �?07 �?23 �?12:33
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -4309,7 +4309,7 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity` (
   `is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
   PRIMARY KEY (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `customer_address_entity`
@@ -4318,7 +4318,8 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity` (
 INSERT INTO `customer_address_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `increment_id`, `parent_id`, `created_at`, `updated_at`, `is_active`) VALUES
 (1, 2, 0, NULL, 1, '2015-07-21 04:47:14', '2015-07-23 00:17:44', 1),
 (2, 2, 0, NULL, 1, '2015-07-22 16:17:15', '2015-07-23 00:17:44', 1),
-(3, 2, 0, NULL, 1, '2015-07-23 00:18:38', '2015-07-23 00:18:38', 1);
+(3, 2, 0, NULL, 1, '2015-07-23 00:18:38', '2015-07-23 00:18:38', 1),
+(4, 2, 0, NULL, 5, '2015-07-22 17:56:25', '2015-07-23 01:56:25', 1);
 
 -- --------------------------------------------------------
 
@@ -4378,7 +4379,7 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_int` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Int' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Int' AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `customer_address_entity_int`
@@ -4387,7 +4388,8 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_int` (
 INSERT INTO `customer_address_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
 (1, 2, 29, 1, 0),
 (2, 2, 29, 2, 0),
-(4, 2, 29, 3, 0);
+(4, 2, 29, 3, 0),
+(5, 2, 29, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -4406,7 +4408,7 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_text` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ENTITY_TYPE_ID` (`entity_type_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_TEXT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Text' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Text' AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `customer_address_entity_text`
@@ -4415,7 +4417,8 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_text` (
 INSERT INTO `customer_address_entity_text` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
 (1, 2, 25, 1, 'address1\naddress2'),
 (2, 2, 25, 2, 'estreet1\nestreet2'),
-(3, 2, 25, 3, 's111\ns222');
+(3, 2, 25, 3, 's111\ns222'),
+(4, 2, 25, 4, 't111\nt222');
 
 -- --------------------------------------------------------
 
@@ -4435,7 +4438,7 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity_varchar` (
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_VARCHAR_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Varchar' AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity Varchar' AUTO_INCREMENT=35 ;
 
 --
 -- 转存表中的数据 `customer_address_entity_varchar`
@@ -4466,7 +4469,16 @@ INSERT INTO `customer_address_entity_varchar` (`value_id`, `entity_type_id`, `at
 (22, 2, 28, 3, 'snanjing'),
 (23, 2, 30, 3, 's123456'),
 (24, 2, 31, 3, '22222222222'),
-(25, 2, 32, 3, '222222');
+(25, 2, 32, 3, '222222'),
+(26, 2, 20, 4, '18604509832'),
+(27, 2, 22, 4, 'test'),
+(28, 2, 24, 4, 'tcom'),
+(29, 2, 26, 4, 'tnanjing'),
+(30, 2, 27, 4, 'CN'),
+(31, 2, 28, 4, 'tjiangsu'),
+(32, 2, 30, 4, 't123456'),
+(33, 2, 31, 4, '3333333333'),
+(34, 2, 32, 4, 'tfax');
 
 -- --------------------------------------------------------
 
@@ -4585,7 +4597,7 @@ INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`
 (2, 1, 0, 1, 'hb4daemon@126.com', 1, NULL, 1, '2015-07-17 04:11:42', '2015-07-17 04:11:42', 1, 0),
 (3, 1, 0, 1, '13852650796@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 11:00:07', '2015-07-23 01:31:23', 1, 0),
 (4, 1, 0, 1, '18116342840@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 11:02:02', '2015-07-23 01:31:24', 1, 0),
-(5, 1, 0, 1, '18604509832@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 11:03:40', '2015-07-23 01:31:24', 1, 0),
+(5, 1, 0, 1, '18604509832@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 11:03:40', '2015-07-23 01:56:25', 1, 0),
 (6, 1, 0, 1, '15821653533@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 12:00:49', '2015-07-23 01:31:25', 1, 0),
 (7, 1, 0, 1, '18616677987@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 14:13:36', '2015-07-23 01:31:26', 1, 0),
 (8, 1, 0, 1, '13566643644@meiguoyouxian.com', 1, NULL, 1, '2014-12-14 16:37:11', '2015-07-23 01:31:26', 1, 0),
@@ -4782,7 +4794,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity_int` (
   KEY `IDX_CUSTOMER_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `customer_entity_int`
@@ -4790,7 +4802,9 @@ CREATE TABLE IF NOT EXISTS `customer_entity_int` (
 
 INSERT INTO `customer_entity_int` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
 (1, 1, 13, 1, 1),
-(2, 1, 14, 1, 2);
+(2, 1, 14, 1, 2),
+(5, 1, 13, 5, 4),
+(6, 1, 14, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -9172,7 +9186,7 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`log_id`),
   KEY `IDX_LOG_CUSTOMER_VISITOR_ID` (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `log_customer`
@@ -9185,7 +9199,8 @@ INSERT INTO `log_customer` (`log_id`, `visitor_id`, `customer_id`, `login_at`, `
 (4, 4, 1, '2015-07-22 18:02:58', '2015-07-22 18:03:40', 1),
 (5, 4, 1, '2015-07-22 18:03:54', NULL, 1),
 (6, 5, 26, '2015-07-22 23:54:49', '2015-07-22 23:56:13', 1),
-(7, 5, 1, '2015-07-22 23:56:29', NULL, 1);
+(7, 5, 1, '2015-07-22 23:56:29', NULL, 1),
+(8, 6, 5, '2015-07-23 01:55:31', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -9208,7 +9223,8 @@ CREATE TABLE IF NOT EXISTS `log_quote` (
 INSERT INTO `log_quote` (`quote_id`, `visitor_id`, `created_at`, `deleted_at`) VALUES
 (1, 2, '2015-07-16 03:50:30', NULL),
 (2, 3, '2015-07-17 04:11:52', NULL),
-(5, 5, '2015-07-22 23:54:49', NULL);
+(5, 5, '2015-07-22 23:54:49', NULL),
+(6, 6, '2015-07-23 01:55:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -9386,7 +9402,16 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (117, 5, '2015-07-23 00:17:55'),
 (118, 5, '2015-07-23 00:17:56'),
 (119, 5, '2015-07-23 00:18:38'),
-(120, 5, '2015-07-23 00:18:39');
+(120, 5, '2015-07-23 00:18:39'),
+(121, 6, '2015-07-23 01:54:20'),
+(122, 6, '2015-07-23 01:55:18'),
+(123, 6, '2015-07-23 01:55:31'),
+(124, 6, '2015-07-23 01:55:32'),
+(125, 6, '2015-07-23 01:55:36'),
+(126, 6, '2015-07-23 01:55:36'),
+(127, 6, '2015-07-23 01:55:39'),
+(128, 6, '2015-07-23 01:56:26'),
+(129, 6, '2015-07-23 01:56:27');
 
 -- --------------------------------------------------------
 
@@ -9399,7 +9424,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=121 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=130 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -9525,7 +9550,16 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (117, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/address/index/'),
 (118, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/address/index/'),
 (119, 'http://localhost/magento/index.php/customer/address/formPost/', 'http://localhost/magento/index.php/customer/address/new/'),
-(120, 'http://localhost/magento/index.php/customer/address/index/', 'http://localhost/magento/index.php/customer/address/new/');
+(120, 'http://localhost/magento/index.php/customer/address/index/', 'http://localhost/magento/index.php/customer/address/new/'),
+(121, 'http://localhost/magento/', NULL),
+(122, 'http://localhost/magento/index.php/customer/account/login/', 'http://localhost/magento/'),
+(123, 'http://localhost/magento/index.php/customer/account/loginPost/', 'http://localhost/magento/index.php/customer/account/login/'),
+(124, 'http://localhost/magento/index.php/customer/account/', 'http://localhost/magento/index.php/customer/account/login/'),
+(125, 'http://localhost/magento/index.php/customer/address/', 'http://localhost/magento/index.php/customer/account/'),
+(126, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/account/'),
+(127, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/account/'),
+(128, 'http://localhost/magento/index.php/customer/address/formPost/', 'http://localhost/magento/index.php/customer/address/new/'),
+(129, 'http://localhost/magento/index.php/customer/address/index/', 'http://localhost/magento/index.php/customer/address/new/');
 
 -- --------------------------------------------------------
 
@@ -9541,7 +9575,7 @@ CREATE TABLE IF NOT EXISTS `log_visitor` (
   `last_url_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Last URL ID',
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `log_visitor`
@@ -9552,7 +9586,8 @@ INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_v
 (2, 'j62ggi3cegngsamc1fvn479rj4', '2015-07-16 03:44:55', '2015-07-16 03:50:31', 5, 1),
 (3, '8dlfvfhsp1uq3hgt0rtmfecop5', '2015-07-17 04:11:03', '2015-07-17 04:11:54', 9, 1),
 (4, '1mgjibado1f2ur2o6u3m5od160', '2015-07-22 18:02:43', '2015-07-22 18:03:55', 87, 1),
-(5, 'hfh48v1o4l1h1acdoklosj0490', '2015-07-22 23:52:03', '2015-07-23 00:18:39', 120, 1);
+(5, 'hfh48v1o4l1h1acdoklosj0490', '2015-07-22 23:52:03', '2015-07-23 00:18:39', 120, 1),
+(6, 'k4377kdi2tetegs12skhe9uk53', '2015-07-23 01:54:17', '2015-07-23 01:56:27', 129, 1);
 
 -- --------------------------------------------------------
 
@@ -9580,7 +9615,8 @@ INSERT INTO `log_visitor_info` (`visitor_id`, `http_referer`, `http_user_agent`,
 (2, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (3, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (4, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
-(5, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
+(5, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
+(6, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -11599,7 +11635,7 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_SALES_FLAT_QUOTE_CUSTOMER_ID_STORE_ID_IS_ACTIVE` (`customer_id`,`store_id`,`is_active`),
   KEY `IDX_SALES_FLAT_QUOTE_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `sales_flat_quote`
@@ -11610,7 +11646,8 @@ INSERT INTO `sales_flat_quote` (`entity_id`, `store_id`, `created_at`, `updated_
 (2, 1, '2015-07-17 04:11:44', '2015-07-17 04:11:44', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'USD', 'USD', 'USD', '0.0000', '0.0000', NULL, 2, 3, 1, 'hb4daemon@126.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'USD', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0),
 (3, 1, '2015-07-21 20:55:57', '2015-07-21 21:00:20', NULL, 0, 0, 0, 1, '3.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '48.0000', '48.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', '2', '100000002', NULL, 'DISCOUNT5EWXTAECIQE5PH2YB91TD ', 'CNY', '1.0000', '1.0000', NULL, NULL, '48.0000', '48.0000', '33.0000', '33.0000', 1, 0, NULL, NULL, 0),
 (4, 1, '2015-07-21 21:06:53', '2015-07-21 21:07:00', NULL, 1, 0, 0, 1, '5.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '50.0000', '50.0000', NULL, 1, 3, 1, 'hb4daemon@163.com', NULL, 'daemon', NULL, 'wang', NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '50.0000', '50.0000', '50.0000', '50.0000', 1, 0, NULL, NULL, 0),
-(5, 1, '2015-07-22 23:54:47', '2015-07-22 23:54:47', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '0.0000', '0.0000', NULL, 26, 3, 1, '15950470109@meiguoyouxian.com', NULL, '15950470109', NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0);
+(5, 1, '2015-07-22 23:54:47', '2015-07-22 23:54:47', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '0.0000', '0.0000', NULL, 26, 3, 1, '15950470109@meiguoyouxian.com', NULL, '15950470109', NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0),
+(6, 1, '2015-07-23 01:55:30', '2015-07-23 01:55:30', NULL, 1, 0, 0, 0, '0.0000', 0, '1.0000', '1.0000', 'CNY', 'CNY', 'CNY', '0.0000', '0.0000', NULL, 5, 3, 1, '18604509832@meiguoyouxian.com', NULL, '18604509832', NULL, NULL, NULL, NULL, NULL, 1, 0, '::1', NULL, NULL, NULL, NULL, 'CNY', '1.0000', '1.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', 1, 0, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -11683,7 +11720,7 @@ CREATE TABLE IF NOT EXISTS `sales_flat_quote_address` (
   `gift_message_id` int(11) DEFAULT NULL COMMENT 'Gift Message Id',
   PRIMARY KEY (`address_id`),
   KEY `IDX_SALES_FLAT_QUOTE_ADDRESS_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address' AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `sales_flat_quote_address`
@@ -11699,7 +11736,9 @@ INSERT INTO `sales_flat_quote_address` (`address_id`, `quote_id`, `created_at`, 
 (7, 4, '2015-07-21 21:06:53', '2015-07-21 21:07:00', 1, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 4, '2015-07-21 21:06:53', '2015-07-21 21:07:00', 1, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '10.0000', '50.0000', '50.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '50.0000', '50.0000', NULL, 'a:0:{}', NULL, '0.0000', '0.0000', '50.0000', NULL, '0.0000', '0.0000', '0.0000', NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
 (9, 5, '2015-07-22 23:54:48', '2015-07-22 23:54:48', 26, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 5, '2015-07-22 23:54:48', '2015-07-22 23:54:48', 26, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
+(10, 5, '2015-07-22 23:54:48', '2015-07-22 23:54:48', 26, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 6, '2015-07-23 01:55:31', '2015-07-23 01:55:31', 5, 0, NULL, 'billing', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 6, '2015-07-23 01:55:31', '2015-07-23 01:55:31', 5, 0, NULL, 'shipping', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', NULL, 'a:0:{}', NULL, NULL, NULL, '0.0000', NULL, NULL, NULL, NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
