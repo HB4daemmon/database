@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?22 �?11:24
+-- 生成日期: 2015 �?07 �?23 �?05:10
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `adminnotification_inbox` (
   KEY `IDX_ADMINNOTIFICATION_INBOX_SEVERITY` (`severity`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_READ` (`is_read`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_REMOVE` (`is_remove`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=95 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=97 ;
 
 --
 -- 转存表中的数据 `adminnotification_inbox`
@@ -141,7 +141,9 @@ INSERT INTO `adminnotification_inbox` (`notification_id`, `severity`, `date_adde
 (91, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (92, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (93, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
-(94, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
+(94, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(95, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(96, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `admin_role` (
   PRIMARY KEY (`role_id`),
   KEY `IDX_ADMIN_ROLE_PARENT_ID_SORT_ORDER` (`parent_id`,`sort_order`),
   KEY `IDX_ADMIN_ROLE_TREE_LEVEL` (`tree_level`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Admin Role Table' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Admin Role Table' AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `admin_role`
@@ -181,7 +183,8 @@ CREATE TABLE IF NOT EXISTS `admin_role` (
 
 INSERT INTO `admin_role` (`role_id`, `parent_id`, `tree_level`, `sort_order`, `role_type`, `user_id`, `role_name`) VALUES
 (1, 0, 1, 1, 'G', 0, 'Administrators'),
-(2, 1, 2, 0, 'U', 1, 'daemon');
+(2, 1, 2, 0, 'U', 1, 'daemon'),
+(3, 0, 1, 0, 'G', 0, 'TEST');
 
 -- --------------------------------------------------------
 
@@ -200,14 +203,216 @@ CREATE TABLE IF NOT EXISTS `admin_rule` (
   PRIMARY KEY (`rule_id`),
   KEY `IDX_ADMIN_RULE_RESOURCE_ID_ROLE_ID` (`resource_id`,`role_id`),
   KEY `IDX_ADMIN_RULE_ROLE_ID_RESOURCE_ID` (`role_id`,`resource_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Admin Rule Table' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Admin Rule Table' AUTO_INCREMENT=204 ;
 
 --
 -- 转存表中的数据 `admin_rule`
 --
 
 INSERT INTO `admin_rule` (`rule_id`, `role_id`, `resource_id`, `privileges`, `assert_id`, `role_type`, `permission`) VALUES
-(1, 1, 'all', NULL, 0, 'G', 'allow');
+(1, 1, 'all', NULL, 0, 'G', 'allow'),
+(2, 3, 'all', NULL, 0, 'G', 'deny'),
+(3, 3, 'admin', NULL, 0, 'G', 'deny'),
+(4, 3, 'admin/dashboard', NULL, 0, 'G', 'deny'),
+(5, 3, 'admin/system', NULL, 0, 'G', 'deny'),
+(6, 3, 'admin/system/acl', NULL, 0, 'G', 'deny'),
+(7, 3, 'admin/system/acl/roles', NULL, 0, 'G', 'deny'),
+(8, 3, 'admin/system/acl/users', NULL, 0, 'G', 'deny'),
+(9, 3, 'admin/system/store', NULL, 0, 'G', 'deny'),
+(10, 3, 'admin/system/design', NULL, 0, 'G', 'deny'),
+(11, 3, 'admin/system/config', NULL, 0, 'G', 'deny'),
+(12, 3, 'admin/system/config/general', NULL, 0, 'G', 'deny'),
+(13, 3, 'admin/system/config/web', NULL, 0, 'G', 'deny'),
+(14, 3, 'admin/system/config/design', NULL, 0, 'G', 'deny'),
+(15, 3, 'admin/system/config/system', NULL, 0, 'G', 'deny'),
+(16, 3, 'admin/system/config/advanced', NULL, 0, 'G', 'deny'),
+(17, 3, 'admin/system/config/trans_email', NULL, 0, 'G', 'deny'),
+(18, 3, 'admin/system/config/dev', NULL, 0, 'G', 'deny'),
+(19, 3, 'admin/system/config/currency', NULL, 0, 'G', 'deny'),
+(20, 3, 'admin/system/config/sendfriend', NULL, 0, 'G', 'deny'),
+(21, 3, 'admin/system/config/admin', NULL, 0, 'G', 'deny'),
+(22, 3, 'admin/system/config/cms', NULL, 0, 'G', 'deny'),
+(23, 3, 'admin/system/config/customer', NULL, 0, 'G', 'deny'),
+(24, 3, 'admin/system/config/catalog', NULL, 0, 'G', 'deny'),
+(25, 3, 'admin/system/config/payment', NULL, 0, 'G', 'deny'),
+(26, 3, 'admin/system/config/payment_services', NULL, 0, 'G', 'deny'),
+(27, 3, 'admin/system/config/sales', NULL, 0, 'G', 'deny'),
+(28, 3, 'admin/system/config/sales_email', NULL, 0, 'G', 'deny'),
+(29, 3, 'admin/system/config/sales_pdf', NULL, 0, 'G', 'deny'),
+(30, 3, 'admin/system/config/cataloginventory', NULL, 0, 'G', 'deny'),
+(31, 3, 'admin/system/config/shipping', NULL, 0, 'G', 'deny'),
+(32, 3, 'admin/system/config/carriers', NULL, 0, 'G', 'deny'),
+(33, 3, 'admin/system/config/promo', NULL, 0, 'G', 'deny'),
+(34, 3, 'admin/system/config/checkout', NULL, 0, 'G', 'deny'),
+(35, 3, 'admin/system/config/paypal', NULL, 0, 'G', 'deny'),
+(36, 3, 'admin/system/config/reports', NULL, 0, 'G', 'deny'),
+(37, 3, 'admin/system/config/google', NULL, 0, 'G', 'deny'),
+(38, 3, 'admin/system/config/tax', NULL, 0, 'G', 'deny'),
+(39, 3, 'admin/system/config/wishlist', NULL, 0, 'G', 'deny'),
+(40, 3, 'admin/system/config/contacts', NULL, 0, 'G', 'deny'),
+(41, 3, 'admin/system/config/sitemap', NULL, 0, 'G', 'deny'),
+(42, 3, 'admin/system/config/rss', NULL, 0, 'G', 'deny'),
+(43, 3, 'admin/system/config/api', NULL, 0, 'G', 'deny'),
+(44, 3, 'admin/system/config/oauth', NULL, 0, 'G', 'deny'),
+(45, 3, 'admin/system/config/newsletter', NULL, 0, 'G', 'deny'),
+(46, 3, 'admin/system/config/downloadable', NULL, 0, 'G', 'deny'),
+(47, 3, 'admin/system/config/persistent', NULL, 0, 'G', 'deny'),
+(48, 3, 'admin/system/config/moneybookers', NULL, 0, 'G', 'deny'),
+(49, 3, 'admin/system/currency', NULL, 0, 'G', 'deny'),
+(50, 3, 'admin/system/currency/rates', NULL, 0, 'G', 'deny'),
+(51, 3, 'admin/system/currency/symbols', NULL, 0, 'G', 'deny'),
+(52, 3, 'admin/system/email_template', NULL, 0, 'G', 'deny'),
+(53, 3, 'admin/system/variable', NULL, 0, 'G', 'deny'),
+(54, 3, 'admin/system/myaccount', NULL, 0, 'G', 'deny'),
+(55, 3, 'admin/system/tools', NULL, 0, 'G', 'deny'),
+(56, 3, 'admin/system/tools/backup', NULL, 0, 'G', 'deny'),
+(57, 3, 'admin/system/tools/backup/rollback', NULL, 0, 'G', 'deny'),
+(58, 3, 'admin/system/tools/compiler', NULL, 0, 'G', 'deny'),
+(59, 3, 'admin/system/convert', NULL, 0, 'G', 'deny'),
+(60, 3, 'admin/system/convert/gui', NULL, 0, 'G', 'deny'),
+(61, 3, 'admin/system/convert/profiles', NULL, 0, 'G', 'deny'),
+(62, 3, 'admin/system/convert/import', NULL, 0, 'G', 'deny'),
+(63, 3, 'admin/system/convert/export', NULL, 0, 'G', 'deny'),
+(64, 3, 'admin/system/cache', NULL, 0, 'G', 'deny'),
+(65, 3, 'admin/system/extensions', NULL, 0, 'G', 'deny'),
+(66, 3, 'admin/system/extensions/local', NULL, 0, 'G', 'deny'),
+(67, 3, 'admin/system/extensions/custom', NULL, 0, 'G', 'deny'),
+(68, 3, 'admin/system/adminnotification', NULL, 0, 'G', 'deny'),
+(69, 3, 'admin/system/adminnotification/show_toolbar', NULL, 0, 'G', 'deny'),
+(70, 3, 'admin/system/adminnotification/show_list', NULL, 0, 'G', 'deny'),
+(71, 3, 'admin/system/adminnotification/mark_as_read', NULL, 0, 'G', 'deny'),
+(72, 3, 'admin/system/adminnotification/remove', NULL, 0, 'G', 'deny'),
+(73, 3, 'admin/system/index', NULL, 0, 'G', 'deny'),
+(74, 3, 'admin/system/order_statuses', NULL, 0, 'G', 'deny'),
+(75, 3, 'admin/system/api', NULL, 0, 'G', 'deny'),
+(76, 3, 'admin/system/api/users', NULL, 0, 'G', 'deny'),
+(77, 3, 'admin/system/api/roles', NULL, 0, 'G', 'deny'),
+(78, 3, 'admin/system/api/consumer', NULL, 0, 'G', 'deny'),
+(79, 3, 'admin/system/api/consumer/edit', NULL, 0, 'G', 'deny'),
+(80, 3, 'admin/system/api/consumer/delete', NULL, 0, 'G', 'deny'),
+(81, 3, 'admin/system/api/authorizedTokens', NULL, 0, 'G', 'deny'),
+(82, 3, 'admin/system/api/oauth_admin_token', NULL, 0, 'G', 'deny'),
+(83, 3, 'admin/system/api/rest_roles', NULL, 0, 'G', 'deny'),
+(84, 3, 'admin/system/api/rest_roles/add', NULL, 0, 'G', 'deny'),
+(85, 3, 'admin/system/api/rest_roles/edit', NULL, 0, 'G', 'deny'),
+(86, 3, 'admin/system/api/rest_roles/delete', NULL, 0, 'G', 'deny'),
+(87, 3, 'admin/system/api/rest_attributes', NULL, 0, 'G', 'deny'),
+(88, 3, 'admin/system/api/rest_attributes/edit', NULL, 0, 'G', 'deny'),
+(89, 3, 'admin/global_search', NULL, 0, 'G', 'deny'),
+(90, 3, 'admin/cms', NULL, 0, 'G', 'deny'),
+(91, 3, 'admin/cms/block', NULL, 0, 'G', 'deny'),
+(92, 3, 'admin/cms/page', NULL, 0, 'G', 'deny'),
+(93, 3, 'admin/cms/page/save', NULL, 0, 'G', 'deny'),
+(94, 3, 'admin/cms/page/delete', NULL, 0, 'G', 'deny'),
+(95, 3, 'admin/cms/media_gallery', NULL, 0, 'G', 'deny'),
+(96, 3, 'admin/cms/poll', NULL, 0, 'G', 'deny'),
+(97, 3, 'admin/cms/widget_instance', NULL, 0, 'G', 'deny'),
+(98, 3, 'admin/customer', NULL, 0, 'G', 'deny'),
+(99, 3, 'admin/customer/group', NULL, 0, 'G', 'deny'),
+(100, 3, 'admin/customer/manage', NULL, 0, 'G', 'deny'),
+(101, 3, 'admin/customer/online', NULL, 0, 'G', 'deny'),
+(102, 3, 'admin/catalog', NULL, 0, 'G', 'deny'),
+(103, 3, 'admin/catalog/attributes', NULL, 0, 'G', 'deny'),
+(104, 3, 'admin/catalog/attributes/attributes', NULL, 0, 'G', 'deny'),
+(105, 3, 'admin/catalog/attributes/sets', NULL, 0, 'G', 'deny'),
+(106, 3, 'admin/catalog/categories', NULL, 0, 'G', 'deny'),
+(107, 3, 'admin/catalog/products', NULL, 0, 'G', 'deny'),
+(108, 3, 'admin/catalog/update_attributes', NULL, 0, 'G', 'deny'),
+(109, 3, 'admin/catalog/urlrewrite', NULL, 0, 'G', 'deny'),
+(110, 3, 'admin/catalog/search', NULL, 0, 'G', 'deny'),
+(111, 3, 'admin/catalog/reviews_ratings', NULL, 0, 'G', 'deny'),
+(112, 3, 'admin/catalog/reviews_ratings/reviews', NULL, 0, 'G', 'deny'),
+(113, 3, 'admin/catalog/reviews_ratings/reviews/all', NULL, 0, 'G', 'deny'),
+(114, 3, 'admin/catalog/reviews_ratings/reviews/pending', NULL, 0, 'G', 'deny'),
+(115, 3, 'admin/catalog/reviews_ratings/ratings', NULL, 0, 'G', 'deny'),
+(116, 3, 'admin/catalog/tag', NULL, 0, 'G', 'deny'),
+(117, 3, 'admin/catalog/tag/all', NULL, 0, 'G', 'deny'),
+(118, 3, 'admin/catalog/tag/pending', NULL, 0, 'G', 'deny'),
+(119, 3, 'admin/catalog/sitemap', NULL, 0, 'G', 'deny'),
+(120, 3, 'admin/promo', NULL, 0, 'G', 'deny'),
+(121, 3, 'admin/promo/catalog', NULL, 0, 'G', 'deny'),
+(122, 3, 'admin/promo/quote', NULL, 0, 'G', 'deny'),
+(123, 3, 'admin/sales', NULL, 0, 'G', 'allow'),
+(124, 3, 'admin/sales/order', NULL, 0, 'G', 'deny'),
+(125, 3, 'admin/sales/order/actions', NULL, 0, 'G', 'deny'),
+(126, 3, 'admin/sales/order/actions/create', NULL, 0, 'G', 'deny'),
+(127, 3, 'admin/sales/order/actions/view', NULL, 0, 'G', 'deny'),
+(128, 3, 'admin/sales/order/actions/email', NULL, 0, 'G', 'deny'),
+(129, 3, 'admin/sales/order/actions/reorder', NULL, 0, 'G', 'deny'),
+(130, 3, 'admin/sales/order/actions/edit', NULL, 0, 'G', 'deny'),
+(131, 3, 'admin/sales/order/actions/cancel', NULL, 0, 'G', 'deny'),
+(132, 3, 'admin/sales/order/actions/review_payment', NULL, 0, 'G', 'deny'),
+(133, 3, 'admin/sales/order/actions/capture', NULL, 0, 'G', 'deny'),
+(134, 3, 'admin/sales/order/actions/invoice', NULL, 0, 'G', 'deny'),
+(135, 3, 'admin/sales/order/actions/creditmemo', NULL, 0, 'G', 'deny'),
+(136, 3, 'admin/sales/order/actions/hold', NULL, 0, 'G', 'deny'),
+(137, 3, 'admin/sales/order/actions/unhold', NULL, 0, 'G', 'deny'),
+(138, 3, 'admin/sales/order/actions/ship', NULL, 0, 'G', 'deny'),
+(139, 3, 'admin/sales/order/actions/comment', NULL, 0, 'G', 'deny'),
+(140, 3, 'admin/sales/order/actions/emails', NULL, 0, 'G', 'deny'),
+(141, 3, 'admin/sales/invoice', NULL, 0, 'G', 'deny'),
+(142, 3, 'admin/sales/shipment', NULL, 0, 'G', 'deny'),
+(143, 3, 'admin/sales/creditmemo', NULL, 0, 'G', 'deny'),
+(144, 3, 'admin/sales/transactions', NULL, 0, 'G', 'allow'),
+(145, 3, 'admin/sales/transactions/fetch', NULL, 0, 'G', 'allow'),
+(146, 3, 'admin/sales/recurring_profile', NULL, 0, 'G', 'deny'),
+(147, 3, 'admin/sales/billing_agreement', NULL, 0, 'G', 'deny'),
+(148, 3, 'admin/sales/billing_agreement/actions', NULL, 0, 'G', 'deny'),
+(149, 3, 'admin/sales/billing_agreement/actions/view', NULL, 0, 'G', 'deny'),
+(150, 3, 'admin/sales/billing_agreement/actions/manage', NULL, 0, 'G', 'deny'),
+(151, 3, 'admin/sales/billing_agreement/actions/use', NULL, 0, 'G', 'deny'),
+(152, 3, 'admin/sales/checkoutagreement', NULL, 0, 'G', 'deny'),
+(153, 3, 'admin/sales/tax', NULL, 0, 'G', 'deny'),
+(154, 3, 'admin/sales/tax/classes_customer', NULL, 0, 'G', 'deny'),
+(155, 3, 'admin/sales/tax/classes_product', NULL, 0, 'G', 'deny'),
+(156, 3, 'admin/sales/tax/import_export', NULL, 0, 'G', 'deny'),
+(157, 3, 'admin/sales/tax/rates', NULL, 0, 'G', 'deny'),
+(158, 3, 'admin/sales/tax/rules', NULL, 0, 'G', 'deny'),
+(159, 3, 'admin/report', NULL, 0, 'G', 'deny'),
+(160, 3, 'admin/report/salesroot', NULL, 0, 'G', 'deny'),
+(161, 3, 'admin/report/salesroot/paypal_settlement_reports', NULL, 0, 'G', 'deny'),
+(162, 3, 'admin/report/salesroot/paypal_settlement_reports/view', NULL, 0, 'G', 'deny'),
+(163, 3, 'admin/report/salesroot/paypal_settlement_reports/fetch', NULL, 0, 'G', 'deny'),
+(164, 3, 'admin/report/salesroot/sales', NULL, 0, 'G', 'deny'),
+(165, 3, 'admin/report/salesroot/tax', NULL, 0, 'G', 'deny'),
+(166, 3, 'admin/report/salesroot/shipping', NULL, 0, 'G', 'deny'),
+(167, 3, 'admin/report/salesroot/invoiced', NULL, 0, 'G', 'deny'),
+(168, 3, 'admin/report/salesroot/refunded', NULL, 0, 'G', 'deny'),
+(169, 3, 'admin/report/salesroot/coupons', NULL, 0, 'G', 'deny'),
+(170, 3, 'admin/report/shopcart', NULL, 0, 'G', 'deny'),
+(171, 3, 'admin/report/shopcart/product', NULL, 0, 'G', 'deny'),
+(172, 3, 'admin/report/shopcart/abandoned', NULL, 0, 'G', 'deny'),
+(173, 3, 'admin/report/products', NULL, 0, 'G', 'deny'),
+(174, 3, 'admin/report/products/bestsellers', NULL, 0, 'G', 'deny'),
+(175, 3, 'admin/report/products/sold', NULL, 0, 'G', 'deny'),
+(176, 3, 'admin/report/products/viewed', NULL, 0, 'G', 'deny'),
+(177, 3, 'admin/report/products/lowstock', NULL, 0, 'G', 'deny'),
+(178, 3, 'admin/report/products/downloads', NULL, 0, 'G', 'deny'),
+(179, 3, 'admin/report/customers', NULL, 0, 'G', 'deny'),
+(180, 3, 'admin/report/customers/accounts', NULL, 0, 'G', 'deny'),
+(181, 3, 'admin/report/customers/totals', NULL, 0, 'G', 'deny'),
+(182, 3, 'admin/report/customers/orders', NULL, 0, 'G', 'deny'),
+(183, 3, 'admin/report/review', NULL, 0, 'G', 'deny'),
+(184, 3, 'admin/report/review/customer', NULL, 0, 'G', 'deny'),
+(185, 3, 'admin/report/review/product', NULL, 0, 'G', 'deny'),
+(186, 3, 'admin/report/tags', NULL, 0, 'G', 'deny'),
+(187, 3, 'admin/report/tags/customer', NULL, 0, 'G', 'deny'),
+(188, 3, 'admin/report/tags/popular', NULL, 0, 'G', 'deny'),
+(189, 3, 'admin/report/tags/product', NULL, 0, 'G', 'deny'),
+(190, 3, 'admin/report/search', NULL, 0, 'G', 'deny'),
+(191, 3, 'admin/report/statistics', NULL, 0, 'G', 'deny'),
+(192, 3, 'admin/newsletter', NULL, 0, 'G', 'deny'),
+(193, 3, 'admin/newsletter/problem', NULL, 0, 'G', 'deny'),
+(194, 3, 'admin/newsletter/queue', NULL, 0, 'G', 'deny'),
+(195, 3, 'admin/newsletter/subscriber', NULL, 0, 'G', 'deny'),
+(196, 3, 'admin/newsletter/template', NULL, 0, 'G', 'deny'),
+(197, 3, 'admin/page_cache', NULL, 0, 'G', 'deny'),
+(198, 3, 'admin/xmlconnect', NULL, 0, 'G', 'deny'),
+(199, 3, 'admin/xmlconnect/mobile', NULL, 0, 'G', 'deny'),
+(200, 3, 'admin/xmlconnect/history', NULL, 0, 'G', 'deny'),
+(201, 3, 'admin/xmlconnect/templates', NULL, 0, 'G', 'deny'),
+(202, 3, 'admin/xmlconnect/queue', NULL, 0, 'G', 'deny'),
+(203, 3, 'admin/xmlconnect/admin_connect', NULL, 0, 'G', 'deny');
 
 -- --------------------------------------------------------
 
@@ -240,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 --
 
 INSERT INTO `admin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-21 22:50:39', 6, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
+(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-22 17:52:28', 8, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4352,7 +4557,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity` (
 --
 
 INSERT INTO `customer_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `website_id`, `email`, `group_id`, `increment_id`, `store_id`, `created_at`, `updated_at`, `is_active`, `disable_auto_group_change`) VALUES
-(1, 1, 0, 1, 'hb4daemon@163.com', 1, NULL, 1, '2015-07-16 03:50:28', '2015-07-21 21:00:18', 1, 0),
+(1, 1, 0, 1, '15151834774@meiguoyouxian.com', 1, NULL, 1, '2015-07-16 03:50:28', '2015-07-21 21:00:18', 1, 0),
 (2, 1, 0, 1, 'hb4daemon@126.com', 1, NULL, 1, '2015-07-17 04:11:42', '2015-07-17 04:11:42', 1, 0);
 
 -- --------------------------------------------------------
@@ -4460,7 +4665,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity_varchar` (
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ENTITY_VARCHAR_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Varchar' AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Varchar' AUTO_INCREMENT=15 ;
 
 --
 -- 转存表中的数据 `customer_entity_varchar`
@@ -4469,7 +4674,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity_varchar` (
 INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_id`, `entity_id`, `value`) VALUES
 (1, 1, 5, 1, 'daemon'),
 (2, 1, 7, 1, 'wang'),
-(3, 1, 12, 1, 'f68ca257ef4393c172b19cd85f923df3:ftUPwKep1Dl3k5Kp12EyrEQg4HRtASvN'),
+(3, 1, 12, 1, 'c33367701511b4f6020ec61ded352059'),
 (4, 1, 3, 1, 'Default Store View'),
 (5, 1, 5, 2, 'daemon'),
 (6, 1, 7, 2, 'wang'),
@@ -4479,7 +4684,8 @@ INSERT INTO `customer_entity_varchar` (`value_id`, `entity_type_id`, `attribute_
 (10, 1, 133, 1, '1990-01-01 00:00:00'),
 (11, 1, 134, 1, '1'),
 (12, 1, 135, 1, '/image/a.jpg'),
-(13, 1, 136, 1, 'å“ˆå“ˆå“ˆ');
+(13, 1, 136, 1, 'å“ˆå“ˆå“ˆ'),
+(14, 1, 137, 1, '00001');
 
 -- --------------------------------------------------------
 
@@ -6318,7 +6524,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=137 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=138 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -6460,7 +6666,8 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (133, 1, 'birthday', NULL, NULL, 'datetime', NULL, NULL, 'date', 'Birthday', NULL, NULL, 0, 0, NULL, 0, NULL),
 (134, 1, 'sex', NULL, NULL, 'varchar', NULL, NULL, 'select', 'Sex', NULL, NULL, 0, 0, NULL, 0, NULL),
 (135, 1, 'myimage', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
-(136, 1, 'nickname', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Nick Name', NULL, NULL, 0, 0, NULL, 0, NULL);
+(136, 1, 'nickname', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Nick Name', NULL, NULL, 0, 0, NULL, 0, NULL),
+(137, 1, 'origin_user_id', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Phone Number', NULL, NULL, 0, 0, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -7259,7 +7466,7 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`log_id`),
   KEY `IDX_LOG_CUSTOMER_VISITOR_ID` (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `log_customer`
@@ -7268,7 +7475,9 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
 INSERT INTO `log_customer` (`log_id`, `visitor_id`, `customer_id`, `login_at`, `logout_at`, `store_id`) VALUES
 (1, 2, 1, '2015-07-16 03:50:30', NULL, 1),
 (2, 3, 2, '2015-07-17 04:11:52', NULL, 1),
-(3, 4, 1, '2015-07-21 20:40:20', NULL, 1);
+(3, 4, 1, '2015-07-21 20:40:20', NULL, 1),
+(4, 4, 1, '2015-07-22 18:02:58', '2015-07-22 18:03:40', 1),
+(5, 4, 1, '2015-07-22 18:03:54', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -7423,7 +7632,19 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (72, 4, '2015-07-21 21:06:53'),
 (73, 4, '2015-07-21 21:06:55'),
 (74, 4, '2015-07-21 21:06:59'),
-(75, 4, '2015-07-21 21:07:01');
+(75, 4, '2015-07-21 21:07:01'),
+(76, 4, '2015-07-22 18:02:45'),
+(77, 4, '2015-07-22 18:02:51'),
+(78, 4, '2015-07-22 18:02:58'),
+(79, 4, '2015-07-22 18:03:00'),
+(80, 4, '2015-07-22 18:03:40'),
+(81, 4, '2015-07-22 18:03:41'),
+(82, 4, '2015-07-22 18:03:44'),
+(83, 4, '2015-07-22 18:03:44'),
+(84, 4, '2015-07-22 18:03:45'),
+(85, 4, '2015-07-22 18:03:49'),
+(86, 4, '2015-07-22 18:03:54'),
+(87, 4, '2015-07-22 18:03:55');
 
 -- --------------------------------------------------------
 
@@ -7436,7 +7657,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=76 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=88 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -7517,7 +7738,19 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (72, 'http://localhost/magento/index.php/checkout/cart/add/uenc/aHR0cDovL2xvY2FsaG9zdC9tYWdlbnRvL2luZGV4LnBocC8tLy5odG1sP19fX1NJRD1V/product/1/form_key/ngUMjMvgVKRSBJ0H/', 'http://localhost/magento/index.php/-/.html'),
 (73, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/-/.html'),
 (74, 'http://localhost/magento/index.php/checkout/cart/couponPost/', 'http://localhost/magento/index.php/checkout/cart/'),
-(75, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/');
+(75, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/checkout/cart/'),
+(76, 'http://localhost/magento/', NULL),
+(77, 'http://localhost/magento/index.php/customer/account/login/', 'http://localhost/magento/'),
+(78, 'http://localhost/magento/index.php/customer/account/loginPost/', 'http://localhost/magento/index.php/customer/account/login/'),
+(79, 'http://localhost/magento/index.php/customer/account/', 'http://localhost/magento/index.php/customer/account/login/'),
+(80, 'http://localhost/magento/index.php/customer/account/logout/', 'http://localhost/magento/index.php/customer/account/'),
+(81, 'http://localhost/magento/index.php/customer/account/logoutSuccess/', 'http://localhost/magento/index.php/customer/account/'),
+(82, 'http://localhost/magento/index.php/checkout/', 'http://localhost/magento/index.php/customer/account/logoutSuccess/'),
+(83, 'http://localhost/magento/index.php/checkout/onepage/', 'http://localhost/magento/index.php/customer/account/logoutSuccess/'),
+(84, 'http://localhost/magento/index.php/checkout/cart/', 'http://localhost/magento/index.php/customer/account/logoutSuccess/'),
+(85, 'http://localhost/magento/index.php/customer/account/login/', 'http://localhost/magento/index.php/checkout/cart/'),
+(86, 'http://localhost/magento/index.php/customer/account/loginPost/', 'http://localhost/magento/index.php/customer/account/login/'),
+(87, 'http://localhost/magento/index.php/customer/account/', 'http://localhost/magento/index.php/customer/account/login/');
 
 -- --------------------------------------------------------
 
@@ -7533,7 +7766,7 @@ CREATE TABLE IF NOT EXISTS `log_visitor` (
   `last_url_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Last URL ID',
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `log_visitor`
@@ -7542,7 +7775,8 @@ CREATE TABLE IF NOT EXISTS `log_visitor` (
 INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_visit_at`, `last_url_id`, `store_id`) VALUES
 (1, 'otv6mf0vo4lcbr2687mlkq6i25', '2015-07-16 03:43:55', '2015-07-16 03:43:56', 1, 1),
 (2, 'j62ggi3cegngsamc1fvn479rj4', '2015-07-16 03:44:55', '2015-07-16 03:50:31', 5, 1),
-(3, '8dlfvfhsp1uq3hgt0rtmfecop5', '2015-07-17 04:11:03', '2015-07-17 04:11:54', 9, 1);
+(3, '8dlfvfhsp1uq3hgt0rtmfecop5', '2015-07-17 04:11:03', '2015-07-17 04:11:54', 9, 1),
+(4, '1mgjibado1f2ur2o6u3m5od160', '2015-07-22 18:02:43', '2015-07-22 18:03:55', 87, 1);
 
 -- --------------------------------------------------------
 
@@ -7568,7 +7802,8 @@ CREATE TABLE IF NOT EXISTS `log_visitor_info` (
 INSERT INTO `log_visitor_info` (`visitor_id`, `http_referer`, `http_user_agent`, `http_accept_charset`, `http_accept_language`, `server_addr`, `remote_addr`) VALUES
 (1, 'http://localhost/magento/index.php/install/wizard/end/', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36', NULL, 'zh-CN,zh;q=0.8,en;q=0.6', 0, 0),
 (2, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
-(3, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
+(3, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
+(4, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -8314,14 +8549,6 @@ CREATE TABLE IF NOT EXISTS `report_viewed_product_index` (
   KEY `IDX_REPORT_VIEWED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
   KEY `IDX_REPORT_VIEWED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=3 ;
-
---
--- 转存表中的数据 `report_viewed_product_index`
---
-
-INSERT INTO `report_viewed_product_index` (`index_id`, `visitor_id`, `customer_id`, `product_id`, `store_id`, `added_at`) VALUES
-(1, 4, 1, 19, 1, '2015-07-21 20:55:53'),
-(2, 4, 1, 1, 1, '2015-07-21 21:06:48');
 
 -- --------------------------------------------------------
 
