@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?23 �?12:33
+-- 生成日期: 2015 �?07 �?27 �?09:53
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -4309,7 +4309,7 @@ CREATE TABLE IF NOT EXISTS `customer_address_entity` (
   `is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
   PRIMARY KEY (`entity_id`),
   KEY `IDX_CUSTOMER_ADDRESS_ENTITY_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Address Entity' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `customer_address_entity`
@@ -4794,7 +4794,7 @@ CREATE TABLE IF NOT EXISTS `customer_entity_int` (
   KEY `IDX_CUSTOMER_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CUSTOMER_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_VALUE` (`entity_id`,`attribute_id`,`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customer Entity Int' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `customer_entity_int`
@@ -8243,7 +8243,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=139 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=143 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -8387,7 +8387,11 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (135, 1, 'myimage', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (136, 1, 'nickname', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Nick Name', NULL, NULL, 0, 0, NULL, 0, NULL),
 (137, 1, 'origin_user_id', NULL, NULL, 'varchar', NULL, NULL, 'text', 'Phone Number', NULL, NULL, 0, 0, NULL, 0, NULL),
-(138, 1, 'reg_city', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL);
+(138, 1, 'reg_city', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(139, 2, 'origin_address_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(140, 2, 'district', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(141, 2, 'area', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(142, 2, 'remark', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -9186,7 +9190,7 @@ CREATE TABLE IF NOT EXISTS `log_customer` (
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`log_id`),
   KEY `IDX_LOG_CUSTOMER_VISITOR_ID` (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Customers Table' AUTO_INCREMENT=10 ;
 
 --
 -- 转存表中的数据 `log_customer`
@@ -9200,7 +9204,8 @@ INSERT INTO `log_customer` (`log_id`, `visitor_id`, `customer_id`, `login_at`, `
 (5, 4, 1, '2015-07-22 18:03:54', NULL, 1),
 (6, 5, 26, '2015-07-22 23:54:49', '2015-07-22 23:56:13', 1),
 (7, 5, 1, '2015-07-22 23:56:29', NULL, 1),
-(8, 6, 5, '2015-07-23 01:55:31', NULL, 1);
+(8, 6, 5, '2015-07-23 01:55:31', NULL, 1),
+(9, 7, 1, '2015-07-26 21:21:07', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -9411,7 +9416,11 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (126, 6, '2015-07-23 01:55:36'),
 (127, 6, '2015-07-23 01:55:39'),
 (128, 6, '2015-07-23 01:56:26'),
-(129, 6, '2015-07-23 01:56:27');
+(129, 6, '2015-07-23 01:56:27'),
+(130, 7, '2015-07-26 21:20:47'),
+(131, 7, '2015-07-26 21:20:52'),
+(132, 7, '2015-07-26 21:21:07'),
+(133, 7, '2015-07-26 21:21:18');
 
 -- --------------------------------------------------------
 
@@ -9424,7 +9433,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=130 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=134 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -9559,7 +9568,11 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (126, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/account/'),
 (127, 'http://localhost/magento/index.php/customer/address/new/', 'http://localhost/magento/index.php/customer/account/'),
 (128, 'http://localhost/magento/index.php/customer/address/formPost/', 'http://localhost/magento/index.php/customer/address/new/'),
-(129, 'http://localhost/magento/index.php/customer/address/index/', 'http://localhost/magento/index.php/customer/address/new/');
+(129, 'http://localhost/magento/index.php/customer/address/index/', 'http://localhost/magento/index.php/customer/address/new/'),
+(130, 'http://localhost/magento/', NULL),
+(131, 'http://localhost/magento/index.php/customer/account/login/', 'http://localhost/magento/'),
+(132, 'http://localhost/magento/index.php/customer/account/loginPost/', 'http://localhost/magento/index.php/customer/account/login/'),
+(133, 'http://localhost/magento/index.php/customer/account/', 'http://localhost/magento/index.php/customer/account/login/');
 
 -- --------------------------------------------------------
 
@@ -9575,7 +9588,7 @@ CREATE TABLE IF NOT EXISTS `log_visitor` (
   `last_url_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Last URL ID',
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `log_visitor`
@@ -9587,7 +9600,8 @@ INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_v
 (3, '8dlfvfhsp1uq3hgt0rtmfecop5', '2015-07-17 04:11:03', '2015-07-17 04:11:54', 9, 1),
 (4, '1mgjibado1f2ur2o6u3m5od160', '2015-07-22 18:02:43', '2015-07-22 18:03:55', 87, 1),
 (5, 'hfh48v1o4l1h1acdoklosj0490', '2015-07-22 23:52:03', '2015-07-23 00:18:39', 120, 1),
-(6, 'k4377kdi2tetegs12skhe9uk53', '2015-07-23 01:54:17', '2015-07-23 01:56:27', 129, 1);
+(6, 'k4377kdi2tetegs12skhe9uk53', '2015-07-23 01:54:17', '2015-07-23 01:56:27', 129, 1),
+(7, 'iok7p2993nu9rvoq8slplr1je5', '2015-07-26 21:20:36', '2015-07-26 21:21:18', 133, 1);
 
 -- --------------------------------------------------------
 
@@ -9616,7 +9630,8 @@ INSERT INTO `log_visitor_info` (`visitor_id`, `http_referer`, `http_user_agent`,
 (3, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (4, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (5, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
-(6, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
+(6, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
+(7, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10361,7 +10376,7 @@ CREATE TABLE IF NOT EXISTS `report_viewed_product_index` (
   KEY `IDX_REPORT_VIEWED_PRODUCT_INDEX_STORE_ID` (`store_id`),
   KEY `IDX_REPORT_VIEWED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
   KEY `IDX_REPORT_VIEWED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
