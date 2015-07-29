@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?29 �?07:50
+-- 生成日期: 2015 �?07 �?29 �?08:07
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -1089,18 +1089,20 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_LEVEL` (`level`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_PATH_ENTITY_ID` (`path`,`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table' AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity`
 --
 
 INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES
-(1, 3, 0, 0, '2015-07-16 03:43:02', '2015-07-16 03:43:02', '1', 0, 0, 4),
-(2, 3, 3, 1, '2015-07-16 03:43:03', '2015-07-16 03:43:03', '1/2', 1, 1, 3),
-(3, 3, 3, 2, '2015-07-21 20:28:37', '2015-07-21 20:28:37', '1/2/3', 1, 2, 0),
+(1, 3, 0, 0, '2015-07-16 03:43:02', '2015-07-16 03:43:02', '1', 0, 0, 6),
+(2, 3, 3, 1, '2015-07-16 03:43:03', '2015-07-16 03:43:03', '1/2', 1, 1, 5),
+(3, 3, 3, 2, '2015-07-21 20:28:37', '2015-07-21 20:28:37', '1/2/3', 1, 2, 1),
 (4, 3, 3, 2, '2015-07-21 20:28:54', '2015-07-21 20:28:54', '1/2/4', 2, 2, 0),
-(5, 3, 3, 2, '2015-07-28 21:50:32', '2015-07-28 21:50:32', '1/2/5', 3, 2, 0);
+(5, 3, 3, 2, '2015-07-28 21:50:32', '2015-07-28 21:50:32', '1/2/5', 3, 2, 1),
+(6, 3, 3, 3, '2015-07-28 22:06:13', '2015-07-28 22:06:13', '1/2/3/6', 1, 3, 0),
+(7, 3, 3, 5, '2015-07-28 22:07:10', '2015-07-28 22:07:10', '1/2/5/7', 1, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1120,7 +1122,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_datetime` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=11 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_datetime`
@@ -1132,7 +1134,11 @@ INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `a
 (3, 3, 59, 0, 4, NULL),
 (4, 3, 60, 0, 4, NULL),
 (5, 3, 59, 0, 5, NULL),
-(6, 3, 60, 0, 5, NULL);
+(6, 3, 60, 0, 5, NULL),
+(7, 3, 59, 0, 6, NULL),
+(8, 3, 60, 0, 6, NULL),
+(9, 3, 59, 0, 7, NULL),
+(10, 3, 60, 0, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -1152,7 +1158,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_decimal` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_decimal`
@@ -1161,7 +1167,9 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_decimal` (
 INSERT INTO `catalog_category_entity_decimal` (`value_id`, `entity_type_id`, `attribute_id`, `store_id`, `entity_id`, `value`) VALUES
 (1, 3, 70, 0, 3, NULL),
 (2, 3, 70, 0, 4, NULL),
-(3, 3, 70, 0, 5, NULL);
+(3, 3, 70, 0, 5, NULL),
+(4, 3, 70, 0, 6, NULL),
+(5, 3, 70, 0, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -1181,7 +1189,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_int` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=37 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_int`
@@ -1211,7 +1219,19 @@ INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attrib
 (21, 3, 50, 0, 5, NULL),
 (22, 3, 51, 0, 5, 0),
 (23, 3, 68, 0, 5, 0),
-(24, 3, 69, 0, 5, 0);
+(24, 3, 69, 0, 5, 0),
+(25, 3, 42, 0, 6, 1),
+(26, 3, 67, 0, 6, 1),
+(27, 3, 50, 0, 6, NULL),
+(28, 3, 51, 0, 6, 0),
+(29, 3, 68, 0, 6, 0),
+(30, 3, 69, 0, 6, 0),
+(31, 3, 42, 0, 7, 1),
+(32, 3, 67, 0, 7, 1),
+(33, 3, 50, 0, 7, NULL),
+(34, 3, 51, 0, 7, 0),
+(35, 3, 68, 0, 7, 0),
+(36, 3, 69, 0, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -1231,7 +1251,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_text` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=30 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_text`
@@ -1256,7 +1276,17 @@ INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attri
 (16, 3, 47, 0, 5, NULL),
 (17, 3, 48, 0, 5, NULL),
 (18, 3, 62, 0, 5, NULL),
-(19, 3, 65, 0, 5, NULL);
+(19, 3, 65, 0, 5, NULL),
+(20, 3, 44, 0, 6, '1desc'),
+(21, 3, 47, 0, 6, NULL),
+(22, 3, 48, 0, 6, NULL),
+(23, 3, 62, 0, 6, NULL),
+(24, 3, 65, 0, 6, NULL),
+(25, 3, 44, 0, 7, '2desc'),
+(26, 3, 47, 0, 7, NULL),
+(27, 3, 48, 0, 7, NULL),
+(28, 3, 62, 0, 7, NULL),
+(29, 3, 65, 0, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -1276,7 +1306,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_varchar` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=48 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_varchar`
@@ -1313,7 +1343,23 @@ INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `at
 (28, 3, 58, 0, 5, NULL),
 (29, 3, 61, 0, 5, NULL),
 (30, 3, 57, 1, 5, 'url-key.html'),
-(31, 3, 57, 0, 5, 'url-key.html');
+(31, 3, 57, 0, 5, 'url-key.html'),
+(32, 3, 41, 0, 6, 'test1'),
+(33, 3, 43, 0, 6, '1url'),
+(34, 3, 46, 0, 6, NULL),
+(35, 3, 49, 0, 6, 'PRODUCTS'),
+(36, 3, 58, 0, 6, NULL),
+(37, 3, 61, 0, 6, NULL),
+(38, 3, 57, 1, 6, '-/1url.html'),
+(39, 3, 57, 0, 6, '-/1url.html'),
+(40, 3, 41, 0, 7, 'test2'),
+(41, 3, 43, 0, 7, '2url'),
+(42, 3, 46, 0, 7, NULL),
+(43, 3, 49, 0, 7, 'PRODUCTS'),
+(44, 3, 58, 0, 7, NULL),
+(45, 3, 61, 0, 7, NULL),
+(46, 3, 57, 1, 7, 'url-key/2url.html'),
+(47, 3, 57, 0, 7, 'url-key/2url.html');
 
 -- --------------------------------------------------------
 
@@ -4116,7 +4162,7 @@ CREATE TABLE IF NOT EXISTS `core_url_rewrite` (
   KEY `IDX_CORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_CORE_URL_REWRITE_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_CORE_URL_REWRITE_PRODUCT_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=52 ;
 
 --
 -- 转存表中的数据 `core_url_rewrite`
@@ -4169,7 +4215,9 @@ INSERT INTO `core_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `reques
 (45, 1, '96056500_1438149033', '-19.html', '--2.html', 0, 'RP', NULL, NULL, 19),
 (46, 1, 'product/19/5', 'url-key/.html', 'catalog/product/view/id/19/category/5', 1, NULL, NULL, 5, 19),
 (48, 1, '96751300_1438149033', '-20.html', '--3.html', 0, 'RP', NULL, NULL, 20),
-(49, 1, 'product/20/5', 'url-key/-20.html', 'catalog/product/view/id/20/category/5', 1, NULL, NULL, 5, 20);
+(49, 1, 'product/20/5', 'url-key/-20.html', 'catalog/product/view/id/20/category/5', 1, NULL, NULL, 5, 20),
+(50, 1, 'category/6', '-/1url.html', 'catalog/category/view/id/6', 1, NULL, NULL, 6, NULL),
+(51, 1, 'category/7', 'url-key/2url.html', 'catalog/category/view/id/7', 1, NULL, NULL, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -10035,7 +10083,7 @@ CREATE TABLE IF NOT EXISTS `index_event` (
   `new_data` mediumtext COMMENT 'New Data',
   PRIMARY KEY (`event_id`),
   UNIQUE KEY `UNQ_INDEX_EVENT_TYPE_ENTITY_ENTITY_PK` (`type`,`entity`,`entity_pk`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `index_event`
@@ -10046,7 +10094,9 @@ INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_a
 (2, 'save', 'catalog_category', 2, '2015-07-16 03:43:03', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (3, 'save', 'catalog_category', 3, '2015-07-21 20:28:38', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (4, 'save', 'catalog_category', 4, '2015-07-21 20:28:55', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
-(5, 'save', 'catalog_category', 5, '2015-07-28 21:50:34', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}');
+(5, 'save', 'catalog_category', 5, '2015-07-28 21:50:34', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
+(6, 'save', 'catalog_category', 6, '2015-07-28 22:06:14', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
+(7, 'save', 'catalog_category', 7, '2015-07-28 22:07:11', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -10072,11 +10122,11 @@ CREATE TABLE IF NOT EXISTS `index_process` (
 INSERT INTO `index_process` (`process_id`, `indexer_code`, `status`, `started_at`, `ended_at`, `mode`) VALUES
 (1, 'catalog_product_attribute', 'pending', '2015-07-21 20:30:10', '2015-07-21 20:30:10', 'real_time'),
 (2, 'catalog_product_price', 'pending', '2015-07-21 20:30:10', '2015-07-21 20:30:12', 'real_time'),
-(3, 'catalog_url', 'pending', '2015-07-28 21:50:33', '2015-07-28 21:50:33', 'real_time'),
+(3, 'catalog_url', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
 (4, 'catalog_product_flat', 'require_reindex', '2015-07-16 03:46:12', '2015-07-16 03:46:13', 'real_time'),
 (5, 'catalog_category_flat', 'pending', '2015-07-16 03:46:13', '2015-07-16 03:46:14', 'real_time'),
-(6, 'catalog_category_product', 'pending', '2015-07-28 21:50:33', '2015-07-28 21:50:34', 'real_time'),
-(7, 'catalogsearch_fulltext', 'pending', '2015-07-28 21:50:34', '2015-07-28 21:50:34', 'real_time'),
+(6, 'catalog_category_product', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
+(7, 'catalogsearch_fulltext', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
 (8, 'cataloginventory_stock', 'pending', '2015-07-21 20:30:09', '2015-07-21 20:30:09', 'real_time'),
 (9, 'tag_summary', 'pending', '2015-07-21 20:30:13', '2015-07-21 20:30:13', 'real_time');
 
