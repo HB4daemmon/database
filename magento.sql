@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?29 �?08:07
+-- 生成日期: 2015 �?07 �?30 �?06:06
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `adminnotification_inbox` (
   KEY `IDX_ADMINNOTIFICATION_INBOX_SEVERITY` (`severity`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_READ` (`is_read`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_REMOVE` (`is_remove`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=99 ;
 
 --
 -- 转存表中的数据 `adminnotification_inbox`
@@ -144,7 +144,8 @@ INSERT INTO `adminnotification_inbox` (`notification_id`, `severity`, `date_adde
 (94, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (95, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (96, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
-(97, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
+(97, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(98, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -446,7 +447,7 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 --
 
 INSERT INTO `admin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-28 21:07:27', 9, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
+(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-29 18:32:30', 11, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -765,7 +766,7 @@ CREATE TABLE IF NOT EXISTS `cataloginventory_stock_status_idx` (
 --
 
 INSERT INTO `cataloginventory_stock_status_idx` (`product_id`, `website_id`, `stock_id`, `qty`, `stock_status`) VALUES
-(1, 1, 1, '1000.0000', 1),
+(1, 1, 1, '997.0000', 1),
 (2, 1, 1, '1000.0000', 1),
 (3, 1, 1, '1000.0000', 1),
 (4, 1, 1, '1000.0000', 1),
@@ -783,7 +784,7 @@ INSERT INTO `cataloginventory_stock_status_idx` (`product_id`, `website_id`, `st
 (16, 1, 1, '1000.0000', 1),
 (17, 1, 1, '1000.0000', 1),
 (18, 1, 1, '1000.0000', 1),
-(19, 1, 1, '1000.0000', 1),
+(19, 1, 1, '997.0000', 1),
 (20, 1, 1, '1000.0000', 1);
 
 -- --------------------------------------------------------
@@ -950,33 +951,33 @@ CREATE TABLE IF NOT EXISTS `catalogsearch_fulltext` (
   PRIMARY KEY (`fulltext_id`),
   UNIQUE KEY `UNQ_CATALOGSEARCH_FULLTEXT_PRODUCT_ID_STORE_ID` (`product_id`,`store_id`),
   FULLTEXT KEY `FTI_CATALOGSEARCH_FULLTEXT_DATA_INDEX` (`data_index`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Catalog search result table' AUTO_INCREMENT=41 ;
 
 --
 -- 转存表中的数据 `catalogsearch_fulltext`
 --
 
 INSERT INTO `catalogsearch_fulltext` (`fulltext_id`, `product_id`, `store_id`, `data_index`) VALUES
-(1, 1, 1, 'peach|无|杨山水蜜桃|杨山水蜜桃|杨山水蜜桃|10|1'),
-(2, 2, 1, 'pamp|无|葡萄柚|葡萄柚|葡萄柚|10|1'),
-(3, 3, 1, 'rice|无|大米|大米|大米|50|1'),
-(4, 4, 1, 'litchi|无|越南荔枝|越南荔枝|越南荔枝|5|1'),
-(5, 5, 1, 'apple|无|陕西红富士|陕西红富士|陕西红富士|5|1'),
-(6, 6, 1, 'banana|无|菲律宾香蕉|菲律宾香蕉|菲律宾香蕉|8|1'),
-(7, 7, 1, 'kiwi|无|新西兰绿奇异果|新西兰绿奇异果|新西兰绿奇异果|8|1'),
-(8, 8, 1, 'pineapple|无|海南凤梨|海南凤梨|海南凤梨|30|1'),
-(9, 9, 1, 'millet|无|小米|小米|小米|20|1'),
-(10, 10, 1, 'Red bean|无|红豆|红豆|红豆|20|1'),
-(11, 11, 1, 'Cucumber|无|水果黄瓜|水果黄瓜|水果黄瓜|10|1'),
-(12, 12, 1, 'Soybean|无|黄豆|黄豆|黄豆|15|1'),
-(13, 13, 1, 'mung|无|绿豆|绿豆|绿豆|15|1'),
-(14, 14, 1, 'Cherry|无|美早樱桃|美早樱桃|美早樱桃|10|1'),
-(15, 15, 1, 'Apricot|无|杏子|杏子|杏子|6|1'),
-(16, 16, 1, 'Jujube|无|红枣|红枣|红枣|18|1'),
-(17, 17, 1, 'Pear|无|砀山梨|砀山梨|砀山梨|8|1'),
-(18, 18, 1, 'Mango|无|芒果|芒果|芒果|6|1'),
-(19, 19, 1, 'Watermelon|无|西瓜|西瓜|西瓜|16|1'),
-(20, 20, 1, 'Cherry Tomatoes|无|圣女果|圣女果|圣女果|25|1');
+(33, 13, 1, 'mung|无|绿豆|绿豆|绿豆|15|1'),
+(32, 12, 1, 'Soybean|无|黄豆|黄豆|黄豆|15|1'),
+(31, 11, 1, 'Cucumber|无|水果黄瓜|水果黄瓜|水果黄瓜|10|1'),
+(30, 10, 1, 'Red bean|无|红豆|红豆|红豆|20|1'),
+(29, 9, 1, 'millet|无|小米|小米|小米|20|1'),
+(28, 8, 1, 'pineapple|无|海南凤梨|海南凤梨|海南凤梨|30|1'),
+(27, 7, 1, 'kiwi|无|新西兰绿奇异果|新西兰绿奇异果|新西兰绿奇异果|8|1'),
+(26, 6, 1, 'banana|无|菲律宾香蕉|菲律宾香蕉|菲律宾香蕉|8|1'),
+(25, 5, 1, 'apple|无|陕西红富士|陕西红富士|陕西红富士|5|1'),
+(24, 4, 1, 'litchi|无|越南荔枝|越南荔枝|越南荔枝|5|1'),
+(23, 3, 1, 'rice|无|大米|大米|大米|50|1'),
+(22, 2, 1, 'pamp|无|葡萄柚|葡萄柚|葡萄柚|10|1'),
+(21, 1, 1, 'peach|无|杨山水蜜桃|杨山水蜜桃|杨山水蜜桃|10|1'),
+(34, 14, 1, 'Cherry|无|美早樱桃|美早樱桃|美早樱桃|10|1'),
+(35, 15, 1, 'Apricot|无|杏子|杏子|杏子|6|1'),
+(36, 16, 1, 'Jujube|无|红枣|红枣|红枣|18|1'),
+(37, 17, 1, 'Pear|无|砀山梨|砀山梨|砀山梨|8|1'),
+(38, 18, 1, 'Mango|无|芒果|芒果|芒果|6|1'),
+(39, 19, 1, 'Watermelon|无|西瓜|西瓜|西瓜|16|1'),
+(40, 20, 1, 'Cherry Tomatoes|无|圣女果|圣女果|圣女果|25|1');
 
 -- --------------------------------------------------------
 
@@ -1089,20 +1090,21 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_LEVEL` (`level`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_PATH_ENTITY_ID` (`path`,`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table' AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity`
 --
 
 INSERT INTO `catalog_category_entity` (`entity_id`, `entity_type_id`, `attribute_set_id`, `parent_id`, `created_at`, `updated_at`, `path`, `position`, `level`, `children_count`) VALUES
-(1, 3, 0, 0, '2015-07-16 03:43:02', '2015-07-16 03:43:02', '1', 0, 0, 6),
-(2, 3, 3, 1, '2015-07-16 03:43:03', '2015-07-16 03:43:03', '1/2', 1, 1, 5),
+(1, 3, 0, 0, '2015-07-16 03:43:02', '2015-07-16 03:43:02', '1', 0, 0, 7),
+(2, 3, 3, 1, '2015-07-16 03:43:03', '2015-07-16 03:43:03', '1/2', 1, 1, 6),
 (3, 3, 3, 2, '2015-07-21 20:28:37', '2015-07-21 20:28:37', '1/2/3', 1, 2, 1),
 (4, 3, 3, 2, '2015-07-21 20:28:54', '2015-07-21 20:28:54', '1/2/4', 2, 2, 0),
-(5, 3, 3, 2, '2015-07-28 21:50:32', '2015-07-28 21:50:32', '1/2/5', 3, 2, 1),
+(5, 3, 3, 2, '2015-07-28 21:50:32', '2015-07-28 21:50:32', '1/2/5', 3, 2, 2),
 (6, 3, 3, 3, '2015-07-28 22:06:13', '2015-07-28 22:06:13', '1/2/3/6', 1, 3, 0),
-(7, 3, 3, 5, '2015-07-28 22:07:10', '2015-07-28 22:07:10', '1/2/5/7', 1, 3, 0);
+(7, 3, 3, 5, '2015-07-28 22:07:10', '2015-07-28 22:07:10', '1/2/5/7', 1, 3, 0),
+(8, 3, 3, 5, '2015-07-29 18:33:15', '2015-07-29 18:33:15', '1/2/5/8', 2, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1122,7 +1124,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_datetime` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_datetime`
@@ -1138,7 +1140,9 @@ INSERT INTO `catalog_category_entity_datetime` (`value_id`, `entity_type_id`, `a
 (7, 3, 59, 0, 6, NULL),
 (8, 3, 60, 0, 6, NULL),
 (9, 3, 59, 0, 7, NULL),
-(10, 3, 60, 0, 7, NULL);
+(10, 3, 60, 0, 7, NULL),
+(11, 3, 59, 0, 8, NULL),
+(12, 3, 60, 0, 8, NULL);
 
 -- --------------------------------------------------------
 
@@ -1158,7 +1162,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_decimal` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_decimal`
@@ -1169,7 +1173,8 @@ INSERT INTO `catalog_category_entity_decimal` (`value_id`, `entity_type_id`, `at
 (2, 3, 70, 0, 4, NULL),
 (3, 3, 70, 0, 5, NULL),
 (4, 3, 70, 0, 6, NULL),
-(5, 3, 70, 0, 7, NULL);
+(5, 3, 70, 0, 7, NULL),
+(6, 3, 70, 0, 8, NULL);
 
 -- --------------------------------------------------------
 
@@ -1189,7 +1194,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_int` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=43 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_int`
@@ -1231,7 +1236,13 @@ INSERT INTO `catalog_category_entity_int` (`value_id`, `entity_type_id`, `attrib
 (33, 3, 50, 0, 7, NULL),
 (34, 3, 51, 0, 7, 0),
 (35, 3, 68, 0, 7, 0),
-(36, 3, 69, 0, 7, 0);
+(36, 3, 69, 0, 7, 0),
+(37, 3, 42, 0, 8, 1),
+(38, 3, 67, 0, 8, 1),
+(39, 3, 50, 0, 8, NULL),
+(40, 3, 51, 0, 8, 0),
+(41, 3, 68, 0, 8, 0),
+(42, 3, 69, 0, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -1251,7 +1262,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_text` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_TEXT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table' AUTO_INCREMENT=35 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_text`
@@ -1286,7 +1297,12 @@ INSERT INTO `catalog_category_entity_text` (`value_id`, `entity_type_id`, `attri
 (26, 3, 47, 0, 7, NULL),
 (27, 3, 48, 0, 7, NULL),
 (28, 3, 62, 0, 7, NULL),
-(29, 3, 65, 0, 7, NULL);
+(29, 3, 65, 0, 7, NULL),
+(30, 3, 44, 0, 8, NULL),
+(31, 3, 47, 0, 8, NULL),
+(32, 3, 48, 0, 8, NULL),
+(33, 3, 62, 0, 8, NULL),
+(34, 3, 65, 0, 8, NULL);
 
 -- --------------------------------------------------------
 
@@ -1306,7 +1322,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_varchar` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_VARCHAR_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table' AUTO_INCREMENT=60 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_varchar`
@@ -1334,16 +1350,14 @@ INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `at
 (19, 3, 61, 0, 4, NULL),
 (20, 3, 57, 1, 3, '-.html'),
 (21, 3, 57, 0, 3, '-.html'),
-(22, 3, 57, 1, 4, '--1.html'),
-(23, 3, 57, 0, 4, '--1.html'),
+(22, 3, 57, 1, 4, '--4.html'),
+(23, 3, 57, 0, 4, '--4.html'),
 (24, 3, 41, 0, 5, 'name'),
 (25, 3, 43, 0, 5, 'url-key'),
 (26, 3, 46, 0, 5, NULL),
 (27, 3, 49, 0, 5, 'PRODUCTS'),
 (28, 3, 58, 0, 5, NULL),
 (29, 3, 61, 0, 5, NULL),
-(30, 3, 57, 1, 5, 'url-key.html'),
-(31, 3, 57, 0, 5, 'url-key.html'),
 (32, 3, 41, 0, 6, 'test1'),
 (33, 3, 43, 0, 6, '1url'),
 (34, 3, 46, 0, 6, NULL),
@@ -1359,7 +1373,17 @@ INSERT INTO `catalog_category_entity_varchar` (`value_id`, `entity_type_id`, `at
 (44, 3, 58, 0, 7, NULL),
 (45, 3, 61, 0, 7, NULL),
 (46, 3, 57, 1, 7, 'url-key/2url.html'),
-(47, 3, 57, 0, 7, 'url-key/2url.html');
+(47, 3, 57, 0, 7, 'url-key/2url.html'),
+(48, 3, 41, 0, 8, 'test3'),
+(49, 3, 43, 0, 8, 'test3'),
+(50, 3, 46, 0, 8, NULL),
+(51, 3, 49, 0, 8, 'PRODUCTS'),
+(52, 3, 58, 0, 8, NULL),
+(53, 3, 61, 0, 8, NULL),
+(56, 3, 57, 1, 5, 'url-key.html'),
+(57, 3, 57, 0, 5, 'url-key.html'),
+(58, 3, 57, 1, 8, 'url-key/test3.html'),
+(59, 3, 57, 0, 8, 'url-key/test3.html');
 
 -- --------------------------------------------------------
 
@@ -2358,44 +2382,44 @@ INSERT INTO `catalog_product_entity_varchar` (`value_id`, `entity_type_id`, `att
 (80, 4, 119, 0, 20, '4'),
 (81, 4, 98, 1, 1, '.html'),
 (82, 4, 98, 0, 1, '.html'),
-(83, 4, 98, 1, 2, '-2.html'),
-(84, 4, 98, 0, 2, '-2.html'),
-(85, 4, 98, 1, 3, '-3.html'),
-(86, 4, 98, 0, 3, '-3.html'),
-(87, 4, 98, 1, 4, '-4.html'),
-(88, 4, 98, 0, 4, '-4.html'),
-(89, 4, 98, 1, 5, '-5.html'),
-(90, 4, 98, 0, 5, '-5.html'),
-(91, 4, 98, 1, 6, '-6.html'),
-(92, 4, 98, 0, 6, '-6.html'),
-(93, 4, 98, 1, 7, '-7.html'),
-(94, 4, 98, 0, 7, '-7.html'),
-(95, 4, 98, 1, 8, '-8.html'),
-(96, 4, 98, 0, 8, '-8.html'),
-(97, 4, 98, 1, 9, '-9.html'),
-(98, 4, 98, 0, 9, '-9.html'),
-(99, 4, 98, 1, 10, '-10.html'),
-(100, 4, 98, 0, 10, '-10.html'),
-(101, 4, 98, 1, 11, '-11.html'),
-(102, 4, 98, 0, 11, '-11.html'),
-(103, 4, 98, 1, 12, '-12.html'),
-(104, 4, 98, 0, 12, '-12.html'),
-(105, 4, 98, 1, 13, '-13.html'),
-(106, 4, 98, 0, 13, '-13.html'),
-(107, 4, 98, 1, 14, '-14.html'),
-(108, 4, 98, 0, 14, '-14.html'),
-(109, 4, 98, 1, 15, '-15.html'),
-(110, 4, 98, 0, 15, '-15.html'),
-(111, 4, 98, 1, 16, '-16.html'),
-(112, 4, 98, 0, 16, '-16.html'),
-(113, 4, 98, 1, 17, '-17.html'),
-(114, 4, 98, 0, 17, '-17.html'),
-(115, 4, 98, 1, 18, '-18.html'),
-(116, 4, 98, 0, 18, '-18.html'),
-(117, 4, 98, 1, 19, '--2.html'),
-(118, 4, 98, 0, 19, '--2.html'),
-(119, 4, 98, 1, 20, '--3.html'),
-(120, 4, 98, 0, 20, '--3.html');
+(83, 4, 98, 1, 2, '--5.html'),
+(84, 4, 98, 0, 2, '--5.html'),
+(85, 4, 98, 1, 3, '--6.html'),
+(86, 4, 98, 0, 3, '--6.html'),
+(87, 4, 98, 1, 4, '--7.html'),
+(88, 4, 98, 0, 4, '--7.html'),
+(89, 4, 98, 1, 5, '--8.html'),
+(90, 4, 98, 0, 5, '--8.html'),
+(91, 4, 98, 1, 6, '--9.html'),
+(92, 4, 98, 0, 6, '--9.html'),
+(93, 4, 98, 1, 7, '--10.html'),
+(94, 4, 98, 0, 7, '--10.html'),
+(95, 4, 98, 1, 8, '--11.html'),
+(96, 4, 98, 0, 8, '--11.html'),
+(97, 4, 98, 1, 9, '--12.html'),
+(98, 4, 98, 0, 9, '--12.html'),
+(99, 4, 98, 1, 10, '--13.html'),
+(100, 4, 98, 0, 10, '--13.html'),
+(101, 4, 98, 1, 11, '--14.html'),
+(102, 4, 98, 0, 11, '--14.html'),
+(103, 4, 98, 1, 12, '--15.html'),
+(104, 4, 98, 0, 12, '--15.html'),
+(105, 4, 98, 1, 13, '--16.html'),
+(106, 4, 98, 0, 13, '--16.html'),
+(107, 4, 98, 1, 14, '--17.html'),
+(108, 4, 98, 0, 14, '--17.html'),
+(109, 4, 98, 1, 15, '--18.html'),
+(110, 4, 98, 0, 15, '--18.html'),
+(111, 4, 98, 1, 16, '--19.html'),
+(112, 4, 98, 0, 16, '--19.html'),
+(113, 4, 98, 1, 17, '--20.html'),
+(114, 4, 98, 0, 17, '--20.html'),
+(115, 4, 98, 1, 18, '--21.html'),
+(116, 4, 98, 0, 18, '--21.html'),
+(117, 4, 98, 1, 19, '--22.html'),
+(118, 4, 98, 0, 19, '--22.html'),
+(119, 4, 98, 1, 20, '--23.html'),
+(120, 4, 98, 0, 20, '--23.html');
 
 -- --------------------------------------------------------
 
@@ -3251,7 +3275,7 @@ CREATE TABLE IF NOT EXISTS `catalog_product_index_website` (
 --
 
 INSERT INTO `catalog_product_index_website` (`website_id`, `website_date`, `rate`) VALUES
-(1, '2015-07-22', 1);
+(1, '2015-07-30', 1);
 
 -- --------------------------------------------------------
 
@@ -4162,7 +4186,7 @@ CREATE TABLE IF NOT EXISTS `core_url_rewrite` (
   KEY `IDX_CORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_CORE_URL_REWRITE_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_CORE_URL_REWRITE_PRODUCT_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=127 ;
 
 --
 -- 转存表中的数据 `core_url_rewrite`
@@ -4170,54 +4194,81 @@ CREATE TABLE IF NOT EXISTS `core_url_rewrite` (
 
 INSERT INTO `core_url_rewrite` (`url_rewrite_id`, `store_id`, `id_path`, `request_path`, `target_path`, `is_system`, `options`, `description`, `category_id`, `product_id`) VALUES
 (1, 1, 'category/3', '-.html', 'catalog/category/view/id/3', 1, NULL, NULL, 3, NULL),
-(2, 1, 'category/4', '--1.html', 'catalog/category/view/id/4', 1, NULL, NULL, 4, NULL),
+(2, 1, 'category/4', '--4.html', 'catalog/category/view/id/4', 1, NULL, NULL, 4, NULL),
 (3, 1, 'product/1', '.html', 'catalog/product/view/id/1', 1, NULL, NULL, NULL, 1),
 (4, 1, 'product/1/3', '-/.html', 'catalog/product/view/id/1/category/3', 1, NULL, NULL, 3, 1),
-(5, 1, 'product/2', '-2.html', 'catalog/product/view/id/2', 1, NULL, NULL, NULL, 2),
+(5, 1, 'product/2', '--5.html', 'catalog/product/view/id/2', 1, NULL, NULL, NULL, 2),
 (6, 1, 'product/2/3', '-/-2.html', 'catalog/product/view/id/2/category/3', 1, NULL, NULL, 3, 2),
-(7, 1, 'product/3', '-3.html', 'catalog/product/view/id/3', 1, NULL, NULL, NULL, 3),
-(8, 1, 'product/3/4', '--1/.html', 'catalog/product/view/id/3/category/4', 1, NULL, NULL, 4, 3),
-(9, 1, 'product/4', '-4.html', 'catalog/product/view/id/4', 1, NULL, NULL, NULL, 4),
+(7, 1, 'product/3', '--6.html', 'catalog/product/view/id/3', 1, NULL, NULL, NULL, 3),
+(8, 1, 'product/3/4', '--4/.html', 'catalog/product/view/id/3/category/4', 1, NULL, NULL, 4, 3),
+(9, 1, 'product/4', '--7.html', 'catalog/product/view/id/4', 1, NULL, NULL, NULL, 4),
 (10, 1, 'product/4/3', '-/-4.html', 'catalog/product/view/id/4/category/3', 1, NULL, NULL, 3, 4),
-(11, 1, 'product/5', '-5.html', 'catalog/product/view/id/5', 1, NULL, NULL, NULL, 5),
+(11, 1, 'product/5', '--8.html', 'catalog/product/view/id/5', 1, NULL, NULL, NULL, 5),
 (12, 1, 'product/5/3', '-/-5.html', 'catalog/product/view/id/5/category/3', 1, NULL, NULL, 3, 5),
-(13, 1, 'product/6', '-6.html', 'catalog/product/view/id/6', 1, NULL, NULL, NULL, 6),
+(13, 1, 'product/6', '--9.html', 'catalog/product/view/id/6', 1, NULL, NULL, NULL, 6),
 (14, 1, 'product/6/3', '-/-6.html', 'catalog/product/view/id/6/category/3', 1, NULL, NULL, 3, 6),
-(15, 1, 'product/7', '-7.html', 'catalog/product/view/id/7', 1, NULL, NULL, NULL, 7),
+(15, 1, 'product/7', '--10.html', 'catalog/product/view/id/7', 1, NULL, NULL, NULL, 7),
 (16, 1, 'product/7/3', '-/-7.html', 'catalog/product/view/id/7/category/3', 1, NULL, NULL, 3, 7),
-(17, 1, 'product/8', '-8.html', 'catalog/product/view/id/8', 1, NULL, NULL, NULL, 8),
+(17, 1, 'product/8', '--11.html', 'catalog/product/view/id/8', 1, NULL, NULL, NULL, 8),
 (18, 1, 'product/8/3', '-/-8.html', 'catalog/product/view/id/8/category/3', 1, NULL, NULL, 3, 8),
-(19, 1, 'product/9', '-9.html', 'catalog/product/view/id/9', 1, NULL, NULL, NULL, 9),
-(20, 1, 'product/9/4', '--1/-9.html', 'catalog/product/view/id/9/category/4', 1, NULL, NULL, 4, 9),
-(21, 1, 'product/10', '-10.html', 'catalog/product/view/id/10', 1, NULL, NULL, NULL, 10),
-(22, 1, 'product/10/4', '--1/-10.html', 'catalog/product/view/id/10/category/4', 1, NULL, NULL, 4, 10),
-(23, 1, 'product/11', '-11.html', 'catalog/product/view/id/11', 1, NULL, NULL, NULL, 11),
+(19, 1, 'product/9', '--12.html', 'catalog/product/view/id/9', 1, NULL, NULL, NULL, 9),
+(20, 1, 'product/9/4', '--4/-9.html', 'catalog/product/view/id/9/category/4', 1, NULL, NULL, 4, 9),
+(21, 1, 'product/10', '--13.html', 'catalog/product/view/id/10', 1, NULL, NULL, NULL, 10),
+(22, 1, 'product/10/4', '--4/-10.html', 'catalog/product/view/id/10/category/4', 1, NULL, NULL, 4, 10),
+(23, 1, 'product/11', '--14.html', 'catalog/product/view/id/11', 1, NULL, NULL, NULL, 11),
 (24, 1, 'product/11/3', '-/-11.html', 'catalog/product/view/id/11/category/3', 1, NULL, NULL, 3, 11),
-(25, 1, 'product/12', '-12.html', 'catalog/product/view/id/12', 1, NULL, NULL, NULL, 12),
-(26, 1, 'product/12/4', '--1/-12.html', 'catalog/product/view/id/12/category/4', 1, NULL, NULL, 4, 12),
-(27, 1, 'product/13', '-13.html', 'catalog/product/view/id/13', 1, NULL, NULL, NULL, 13),
-(28, 1, 'product/13/4', '--1/-13.html', 'catalog/product/view/id/13/category/4', 1, NULL, NULL, 4, 13),
-(29, 1, 'product/14', '-14.html', 'catalog/product/view/id/14', 1, NULL, NULL, NULL, 14),
+(25, 1, 'product/12', '--15.html', 'catalog/product/view/id/12', 1, NULL, NULL, NULL, 12),
+(26, 1, 'product/12/4', '--4/-12.html', 'catalog/product/view/id/12/category/4', 1, NULL, NULL, 4, 12),
+(27, 1, 'product/13', '--16.html', 'catalog/product/view/id/13', 1, NULL, NULL, NULL, 13),
+(28, 1, 'product/13/4', '--4/-13.html', 'catalog/product/view/id/13/category/4', 1, NULL, NULL, 4, 13),
+(29, 1, 'product/14', '--17.html', 'catalog/product/view/id/14', 1, NULL, NULL, NULL, 14),
 (30, 1, 'product/14/3', '-/-14.html', 'catalog/product/view/id/14/category/3', 1, NULL, NULL, 3, 14),
-(31, 1, 'product/15', '-15.html', 'catalog/product/view/id/15', 1, NULL, NULL, NULL, 15),
+(31, 1, 'product/15', '--18.html', 'catalog/product/view/id/15', 1, NULL, NULL, NULL, 15),
 (32, 1, 'product/15/3', '-/-15.html', 'catalog/product/view/id/15/category/3', 1, NULL, NULL, 3, 15),
-(33, 1, 'product/16', '-16.html', 'catalog/product/view/id/16', 1, NULL, NULL, NULL, 16),
-(34, 1, 'product/16/4', '--1/-16.html', 'catalog/product/view/id/16/category/4', 1, NULL, NULL, 4, 16),
-(35, 1, 'product/17', '-17.html', 'catalog/product/view/id/17', 1, NULL, NULL, NULL, 17),
+(33, 1, 'product/16', '--19.html', 'catalog/product/view/id/16', 1, NULL, NULL, NULL, 16),
+(34, 1, 'product/16/4', '--4/-16.html', 'catalog/product/view/id/16/category/4', 1, NULL, NULL, 4, 16),
+(35, 1, 'product/17', '--20.html', 'catalog/product/view/id/17', 1, NULL, NULL, NULL, 17),
 (36, 1, 'product/17/3', '-/-17.html', 'catalog/product/view/id/17/category/3', 1, NULL, NULL, 3, 17),
-(37, 1, 'product/18', '-18.html', 'catalog/product/view/id/18', 1, NULL, NULL, NULL, 18),
+(37, 1, 'product/18', '--21.html', 'catalog/product/view/id/18', 1, NULL, NULL, NULL, 18),
 (38, 1, 'product/18/3', '-/-18.html', 'catalog/product/view/id/18/category/3', 1, NULL, NULL, 3, 18),
-(39, 1, 'product/19', '--2.html', 'catalog/product/view/id/19', 1, NULL, NULL, NULL, 19),
+(39, 1, 'product/19', '--22.html', 'catalog/product/view/id/19', 1, NULL, NULL, NULL, 19),
 (40, 1, 'product/19/3', '-/-19.html', 'catalog/product/view/id/19/category/3', 1, NULL, NULL, 3, 19),
-(41, 1, 'product/20', '--3.html', 'catalog/product/view/id/20', 1, NULL, NULL, NULL, 20),
+(41, 1, 'product/20', '--23.html', 'catalog/product/view/id/20', 1, NULL, NULL, NULL, 20),
 (42, 1, 'product/20/3', '-/-20.html', 'catalog/product/view/id/20/category/3', 1, NULL, NULL, 3, 20),
 (43, 1, 'category/5', 'url-key.html', 'catalog/category/view/id/5', 1, NULL, NULL, 5, NULL),
-(45, 1, '96056500_1438149033', '-19.html', '--2.html', 0, 'RP', NULL, NULL, 19),
+(45, 1, '96056500_1438149033', '-19.html', '--22.html', 0, 'RP', NULL, NULL, 19),
 (46, 1, 'product/19/5', 'url-key/.html', 'catalog/product/view/id/19/category/5', 1, NULL, NULL, 5, 19),
-(48, 1, '96751300_1438149033', '-20.html', '--3.html', 0, 'RP', NULL, NULL, 20),
+(48, 1, '96751300_1438149033', '-20.html', '--23.html', 0, 'RP', NULL, NULL, 20),
 (49, 1, 'product/20/5', 'url-key/-20.html', 'catalog/product/view/id/20/category/5', 1, NULL, NULL, 5, 20),
 (50, 1, 'category/6', '-/1url.html', 'catalog/category/view/id/6', 1, NULL, NULL, 6, NULL),
-(51, 1, 'category/7', 'url-key/2url.html', 'catalog/category/view/id/7', 1, NULL, NULL, 7, NULL);
+(51, 1, 'category/7', 'url-key/2url.html', 'catalog/category/view/id/7', 1, NULL, NULL, 7, NULL),
+(52, 1, 'category/8', 'url-key/test3.html', 'catalog/category/view/id/8', 1, NULL, NULL, 8, NULL),
+(56, 1, '64899800_1438225411', '--1.html', '--4.html', 0, 'RP', NULL, 4, NULL),
+(63, 1, '70707400_1438225411', '-2.html', '--5.html', 0, 'RP', NULL, NULL, 2),
+(66, 1, '71350100_1438225411', '-3.html', '--6.html', 0, 'RP', NULL, NULL, 3),
+(68, 1, '71768900_1438225411', '--1/.html', '--4/.html', 0, 'RP', NULL, 4, 3),
+(70, 1, '72193900_1438225411', '-4.html', '--7.html', 0, 'RP', NULL, NULL, 4),
+(73, 1, '72920100_1438225411', '-5.html', '--8.html', 0, 'RP', NULL, NULL, 5),
+(76, 1, '73675900_1438225411', '-6.html', '--9.html', 0, 'RP', NULL, NULL, 6),
+(79, 1, '74808200_1438225411', '-7.html', '--10.html', 0, 'RP', NULL, NULL, 7),
+(82, 1, '76166400_1438225411', '-8.html', '--11.html', 0, 'RP', NULL, NULL, 8),
+(85, 1, '77659200_1438225411', '-9.html', '--12.html', 0, 'RP', NULL, NULL, 9),
+(87, 1, '78462900_1438225411', '--1/-9.html', '--4/-9.html', 0, 'RP', NULL, 4, 9),
+(89, 1, '79235300_1438225411', '-10.html', '--13.html', 0, 'RP', NULL, NULL, 10),
+(91, 1, '79764900_1438225411', '--1/-10.html', '--4/-10.html', 0, 'RP', NULL, 4, 10),
+(93, 1, '80141400_1438225411', '-11.html', '--14.html', 0, 'RP', NULL, NULL, 11),
+(96, 1, '80850600_1438225411', '-12.html', '--15.html', 0, 'RP', NULL, NULL, 12),
+(98, 1, '81320000_1438225411', '--1/-12.html', '--4/-12.html', 0, 'RP', NULL, 4, 12),
+(100, 1, '82014000_1438225411', '-13.html', '--16.html', 0, 'RP', NULL, NULL, 13),
+(102, 1, '82894900_1438225411', '--1/-13.html', '--4/-13.html', 0, 'RP', NULL, 4, 13),
+(104, 1, '83489400_1438225411', '-14.html', '--17.html', 0, 'RP', NULL, NULL, 14),
+(107, 1, '88031200_1438225411', '-15.html', '--18.html', 0, 'RP', NULL, NULL, 15),
+(110, 1, '88992900_1438225411', '-16.html', '--19.html', 0, 'RP', NULL, NULL, 16),
+(112, 1, '89703800_1438225411', '--1/-16.html', '--4/-16.html', 0, 'RP', NULL, 4, 16),
+(114, 1, '90338600_1438225411', '-17.html', '--20.html', 0, 'RP', NULL, NULL, 17),
+(117, 1, '91368800_1438225411', '-18.html', '--21.html', 0, 'RP', NULL, NULL, 18),
+(120, 1, '92444100_1438225411', '--2.html', '--22.html', 0, 'RP', NULL, NULL, 19),
+(124, 1, '00514700_1438225412', '--3.html', '--23.html', 0, 'RP', NULL, NULL, 20);
 
 -- --------------------------------------------------------
 
@@ -9208,7 +9259,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=144 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=147 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -9357,7 +9408,10 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (140, 2, 'district', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (141, 2, 'area', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (142, 2, 'remark', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
-(143, 2, 'dateline', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL);
+(143, 2, 'dateline', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(144, 3, 'origin_cat_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(145, 3, 'origin_path', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(146, 3, 'origin_parent_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -10083,7 +10137,7 @@ CREATE TABLE IF NOT EXISTS `index_event` (
   `new_data` mediumtext COMMENT 'New Data',
   PRIMARY KEY (`event_id`),
   UNIQUE KEY `UNQ_INDEX_EVENT_TYPE_ENTITY_ENTITY_PK` (`type`,`entity`,`entity_pk`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Index Event' AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `index_event`
@@ -10096,7 +10150,8 @@ INSERT INTO `index_event` (`event_id`, `type`, `entity`, `entity_pk`, `created_a
 (4, 'save', 'catalog_category', 4, '2015-07-21 20:28:55', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (5, 'save', 'catalog_category', 5, '2015-07-28 21:50:34', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
 (6, 'save', 'catalog_category', 6, '2015-07-28 22:06:14', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
-(7, 'save', 'catalog_category', 7, '2015-07-28 22:07:11', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}');
+(7, 'save', 'catalog_category', 7, '2015-07-28 22:07:11', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}'),
+(8, 'save', 'catalog_category', 8, '2015-07-29 18:33:16', NULL, 'a:5:{s:35:"cataloginventory_stock_match_result";b:0;s:34:"catalog_product_price_match_result";b:0;s:24:"catalog_url_match_result";b:1;s:37:"catalog_category_product_match_result";b:1;s:35:"catalogsearch_fulltext_match_result";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -10120,15 +10175,15 @@ CREATE TABLE IF NOT EXISTS `index_process` (
 --
 
 INSERT INTO `index_process` (`process_id`, `indexer_code`, `status`, `started_at`, `ended_at`, `mode`) VALUES
-(1, 'catalog_product_attribute', 'pending', '2015-07-21 20:30:10', '2015-07-21 20:30:10', 'real_time'),
-(2, 'catalog_product_price', 'pending', '2015-07-21 20:30:10', '2015-07-21 20:30:12', 'real_time'),
-(3, 'catalog_url', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
+(1, 'catalog_product_attribute', 'pending', '2015-07-29 19:03:23', '2015-07-29 19:03:25', 'real_time'),
+(2, 'catalog_product_price', 'pending', '2015-07-29 19:03:25', '2015-07-29 19:03:31', 'real_time'),
+(3, 'catalog_url', 'pending', '2015-07-29 19:03:31', '2015-07-29 19:03:32', 'real_time'),
 (4, 'catalog_product_flat', 'require_reindex', '2015-07-16 03:46:12', '2015-07-16 03:46:13', 'real_time'),
 (5, 'catalog_category_flat', 'pending', '2015-07-16 03:46:13', '2015-07-16 03:46:14', 'real_time'),
-(6, 'catalog_category_product', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
-(7, 'catalogsearch_fulltext', 'pending', '2015-07-28 22:07:11', '2015-07-28 22:07:11', 'real_time'),
-(8, 'cataloginventory_stock', 'pending', '2015-07-21 20:30:09', '2015-07-21 20:30:09', 'real_time'),
-(9, 'tag_summary', 'pending', '2015-07-21 20:30:13', '2015-07-21 20:30:13', 'real_time');
+(6, 'catalog_category_product', 'pending', '2015-07-29 19:03:32', '2015-07-29 19:03:32', 'real_time'),
+(7, 'catalogsearch_fulltext', 'pending', '2015-07-29 19:03:32', '2015-07-29 19:03:32', 'real_time'),
+(8, 'cataloginventory_stock', 'pending', '2015-07-29 19:03:19', '2015-07-29 19:03:22', 'real_time'),
+(9, 'tag_summary', 'pending', '2015-07-29 19:03:32', '2015-07-29 19:03:32', 'real_time');
 
 -- --------------------------------------------------------
 
@@ -10400,7 +10455,21 @@ INSERT INTO `log_url` (`url_id`, `visitor_id`, `visit_time`) VALUES
 (139, 10, '2015-07-28 17:27:43'),
 (140, 10, '2015-07-28 17:27:53'),
 (141, 10, '2015-07-28 17:28:42'),
-(142, 10, '2015-07-28 17:29:52');
+(142, 10, '2015-07-28 17:29:52'),
+(143, 11, '2015-07-29 18:32:26'),
+(144, 12, '2015-07-29 18:56:05'),
+(145, 12, '2015-07-29 18:56:13'),
+(146, 12, '2015-07-29 18:56:18'),
+(147, 12, '2015-07-29 18:58:55'),
+(148, 12, '2015-07-29 18:59:03'),
+(149, 12, '2015-07-29 19:02:40'),
+(150, 12, '2015-07-29 19:02:45'),
+(151, 12, '2015-07-29 19:02:48'),
+(152, 12, '2015-07-29 19:02:50'),
+(153, 12, '2015-07-29 19:03:27'),
+(154, 12, '2015-07-29 19:03:31'),
+(155, 12, '2015-07-29 19:03:38'),
+(156, 12, '2015-07-29 19:03:41');
 
 -- --------------------------------------------------------
 
@@ -10413,7 +10482,7 @@ CREATE TABLE IF NOT EXISTS `log_url_info` (
   `url` varchar(255) DEFAULT NULL COMMENT 'URL',
   `referer` varchar(255) DEFAULT NULL COMMENT 'Referrer',
   PRIMARY KEY (`url_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=143 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table' AUTO_INCREMENT=157 ;
 
 --
 -- 转存表中的数据 `log_url_info`
@@ -10561,7 +10630,21 @@ INSERT INTO `log_url_info` (`url_id`, `url`, `referer`) VALUES
 (139, 'http://localhost/magento/magmi/web/installation', NULL),
 (140, 'http://localhost/magento/magmi/web/installation.php', NULL),
 (141, 'http://localhost/magento/magmi/web/installation/', NULL),
-(142, 'http://localhost/magento/magmi/web/installation/', NULL);
+(142, 'http://localhost/magento/magmi/web/installation/', NULL),
+(143, 'http://localhost/magento/index.php/admimn', NULL),
+(144, 'http://localhost/magento/', NULL),
+(145, 'http://localhost/magento/index.php/catalog/category/view/id/7', 'http://localhost/magento/'),
+(146, 'http://localhost/magento/index.php/catalog/category/view/id/5', 'http://localhost/magento/index.php/url-key/2url.html'),
+(147, 'http://localhost/magento/index.php/catalog/category/view/id/5', 'http://localhost/magento/index.php/url-key/2url.html'),
+(148, 'http://localhost/magento/index.php/catalog/category/view/id/8', 'http://localhost/magento/index.php/url-key.html'),
+(149, 'http://localhost/magento/index.php/', 'http://localhost/magento/index.php/url-key/test3.html'),
+(150, 'http://localhost/magento/index.php/catalog/category/view/id/6', 'http://localhost/magento/index.php/'),
+(151, 'http://localhost/magento/index.php/catalog/category/view/id/7', 'http://localhost/magento/index.php/-/1url.html'),
+(152, 'http://localhost/magento/index.php/catalog/category/view/id/8', 'http://localhost/magento/index.php/url-key/2url.html'),
+(153, 'http://localhost/magento/index.php/', 'http://localhost/magento/index.php/url-key/test3.html'),
+(154, 'http://localhost/magento/index.php/catalog/category/view/id/5', 'http://localhost/magento/index.php/'),
+(155, 'http://localhost/magento/index.php/catalog/category/view/id/7', 'http://localhost/magento/index.php/url-key.html'),
+(156, 'http://localhost/magento/index.php/catalog/category/view/id/8', 'http://localhost/magento/index.php/url-key/2url.html');
 
 -- --------------------------------------------------------
 
@@ -10577,7 +10660,7 @@ CREATE TABLE IF NOT EXISTS `log_visitor` (
   `last_url_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'Last URL ID',
   `store_id` smallint(5) unsigned NOT NULL COMMENT 'Store ID',
   PRIMARY KEY (`visitor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table' AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `log_visitor`
@@ -10593,7 +10676,9 @@ INSERT INTO `log_visitor` (`visitor_id`, `session_id`, `first_visit_at`, `last_v
 (7, 'iok7p2993nu9rvoq8slplr1je5', '2015-07-26 21:20:36', '2015-07-26 21:21:18', 133, 1),
 (8, 'c3if5h5c35ta35caohqgs351m6', '2015-07-27 19:23:28', '2015-07-27 19:23:28', 0, 1),
 (9, '9ruf1fhgu0mu37cujre7rqi1o4', '2015-07-27 19:23:28', '2015-07-27 19:24:03', 138, 1),
-(10, '9uil16nrmrloi3952jb7f9uqu4', '2015-07-28 17:27:36', '2015-07-28 17:29:52', 142, 1);
+(10, '9uil16nrmrloi3952jb7f9uqu4', '2015-07-28 17:27:36', '2015-07-28 17:29:52', 142, 1),
+(11, 'fgbbe4vmgrr652nt946b3v84b2', '2015-07-29 18:32:21', '2015-07-29 18:32:26', 143, 1),
+(12, 'kta1vp0k40oquggjqv6t4dr147', '2015-07-29 18:56:04', '2015-07-29 19:03:41', 156, 1);
 
 -- --------------------------------------------------------
 
@@ -10626,7 +10711,9 @@ INSERT INTO `log_visitor_info` (`visitor_id`, `http_referer`, `http_user_agent`,
 (7, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (8, 'http://localhost/magento/index.php/customer/account/', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
 (9, 'http://localhost/magento/index.php/customer/account/', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
-(10, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
+(10, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
+(11, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0),
+(12, NULL, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', NULL, 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 0, 0);
 
 -- --------------------------------------------------------
 
