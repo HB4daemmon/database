@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?30 �?13:08
+-- 生成日期: 2015 �?07 �?31 �?11:18
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -1177,7 +1177,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_datetime` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DATETIME_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=121 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table' AUTO_INCREMENT=119 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_datetime`
@@ -1321,7 +1321,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_decimal` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_DECIMAL_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Decimal Attribute Backend Table' AUTO_INCREMENT=60 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_decimal`
@@ -1406,7 +1406,7 @@ CREATE TABLE IF NOT EXISTS `catalog_category_entity_int` (
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_CATEGORY_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=362 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table' AUTO_INCREMENT=361 ;
 
 --
 -- 转存表中的数据 `catalog_category_entity_int`
@@ -5458,7 +5458,7 @@ CREATE TABLE IF NOT EXISTS `core_url_rewrite` (
   KEY `IDX_CORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_CORE_URL_REWRITE_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_CORE_URL_REWRITE_PRODUCT_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=127 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=125 ;
 
 --
 -- 转存表中的数据 `core_url_rewrite`
