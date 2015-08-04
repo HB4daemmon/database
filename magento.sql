@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?08 �?04 �?05:44
+-- 生成日期: 2015 �?08 �?04 �?05:59
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -3163,7 +3163,9 @@ INSERT INTO `catalog_eav_attribute` (`attribute_id`, `frontend_input_renderer`, 
 (131, NULL, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'downloadable', 0, 0, 0, 0),
 (147, NULL, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, NULL, 0, 0, 0, 0),
 (148, NULL, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0),
-(149, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0);
+(149, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0),
+(150, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0),
+(151, NULL, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10798,7 +10800,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=150 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=152 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -10953,7 +10955,9 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (146, 3, 'origin_parent_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (147, 3, 'thumbnail', NULL, 'catalog/category_attribute_backend_image', 'varchar', NULL, NULL, 'image', 'Thumbnail Image', NULL, NULL, 0, 0, NULL, 0, NULL),
 (148, 4, 'origin_product_id', NULL, NULL, 'varchar', NULL, NULL, 'text', 'origin_product_id', NULL, NULL, 0, 1, NULL, 0, NULL),
-(149, 4, 'test', NULL, NULL, 'varchar', NULL, NULL, 'text', 'test', NULL, NULL, 0, 1, NULL, 0, NULL);
+(149, 4, 'test', NULL, NULL, 'varchar', NULL, NULL, 'text', 'test', NULL, NULL, 0, 1, NULL, 0, NULL),
+(150, 4, 'sort_order', NULL, NULL, 'varchar', NULL, NULL, 'text', 'sort_order', NULL, NULL, 0, 1, NULL, 0, NULL),
+(151, 4, 'unit', NULL, NULL, 'varchar', NULL, NULL, 'text', 'unit', NULL, NULL, 0, 1, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -11010,15 +11014,17 @@ CREATE TABLE IF NOT EXISTS `eav_attribute_label` (
   KEY `IDX_EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_EAV_ATTRIBUTE_LABEL_STORE_ID` (`store_id`),
   KEY `IDX_EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID` (`attribute_id`,`store_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute Label' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute Label' AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `eav_attribute_label`
 --
 
 INSERT INTO `eav_attribute_label` (`attribute_label_id`, `attribute_id`, `store_id`, `value`) VALUES
-(5, 148, 1, 'origin_product_id'),
-(6, 149, 1, 'test');
+(10, 149, 1, 'test'),
+(13, 148, 1, 'origin_product_id'),
+(14, 150, 1, 'sort_order'),
+(15, 151, 1, 'unit');
 
 -- --------------------------------------------------------
 
@@ -11135,7 +11141,7 @@ CREATE TABLE IF NOT EXISTS `eav_entity_attribute` (
   UNIQUE KEY `UNQ_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_GROUP_ID_ATTRIBUTE_ID` (`attribute_group_id`,`attribute_id`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_SET_ID_SORT_ORDER` (`attribute_set_id`,`sort_order`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=302 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=476 ;
 
 --
 -- 转存表中的数据 `eav_entity_attribute`
@@ -11237,48 +11243,49 @@ INSERT INTO `eav_entity_attribute` (`entity_attribute_id`, `entity_type_id`, `at
 (133, 1, 1, 1, 135, 0),
 (134, 1, 1, 1, 136, 0),
 (135, 3, 3, 4, 147, 4),
-(219, 4, 4, 7, 71, 1),
-(221, 4, 4, 7, 72, 2),
-(223, 4, 4, 7, 73, 3),
-(225, 4, 4, 7, 74, 4),
-(227, 4, 4, 7, 80, 5),
-(229, 4, 4, 7, 93, 6),
-(231, 4, 4, 7, 94, 7),
-(233, 4, 4, 7, 96, 8),
-(235, 4, 4, 7, 97, 9),
-(237, 4, 4, 7, 102, 10),
-(239, 4, 4, 7, 117, 11),
-(241, 4, 4, 7, 148, 13),
-(243, 4, 4, 7, 149, 12),
-(245, 4, 4, 8, 75, 1),
-(247, 4, 4, 8, 76, 3),
-(249, 4, 4, 8, 77, 4),
-(251, 4, 4, 8, 78, 5),
-(253, 4, 4, 8, 79, 6),
-(255, 4, 4, 8, 90, 2),
-(257, 4, 4, 8, 91, 7),
-(259, 4, 4, 8, 118, 8),
-(261, 4, 4, 8, 119, 9),
-(263, 4, 4, 8, 120, 10),
-(265, 4, 4, 8, 121, 11),
-(267, 4, 4, 8, 126, 12),
-(269, 4, 4, 9, 82, 1),
-(271, 4, 4, 9, 83, 2),
-(273, 4, 4, 9, 84, 3),
-(275, 4, 4, 10, 85, 1),
-(277, 4, 4, 10, 86, 2),
-(279, 4, 4, 10, 87, 3),
-(281, 4, 4, 10, 88, 4),
-(283, 4, 4, 10, 95, 5),
-(285, 4, 4, 11, 100, 1),
-(287, 4, 4, 11, 101, 2),
-(289, 4, 4, 12, 103, 1),
-(291, 4, 4, 12, 104, 2),
-(293, 4, 4, 12, 105, 3),
-(295, 4, 4, 12, 106, 4),
-(297, 4, 4, 12, 107, 5),
-(299, 4, 4, 12, 109, 6),
-(301, 4, 4, 17, 122, 1);
+(391, 4, 4, 7, 71, 1),
+(393, 4, 4, 7, 72, 2),
+(395, 4, 4, 7, 73, 3),
+(397, 4, 4, 7, 74, 4),
+(399, 4, 4, 7, 80, 6),
+(401, 4, 4, 7, 93, 7),
+(403, 4, 4, 7, 94, 8),
+(405, 4, 4, 7, 96, 9),
+(407, 4, 4, 7, 97, 10),
+(409, 4, 4, 7, 102, 11),
+(411, 4, 4, 7, 117, 12),
+(413, 4, 4, 7, 148, 13),
+(415, 4, 4, 7, 150, 14),
+(417, 4, 4, 7, 151, 5),
+(419, 4, 4, 8, 75, 1),
+(421, 4, 4, 8, 76, 3),
+(423, 4, 4, 8, 77, 4),
+(425, 4, 4, 8, 78, 5),
+(427, 4, 4, 8, 79, 6),
+(429, 4, 4, 8, 90, 2),
+(431, 4, 4, 8, 91, 7),
+(433, 4, 4, 8, 118, 8),
+(435, 4, 4, 8, 119, 9),
+(437, 4, 4, 8, 120, 10),
+(439, 4, 4, 8, 121, 11),
+(441, 4, 4, 8, 126, 12),
+(443, 4, 4, 9, 82, 1),
+(445, 4, 4, 9, 83, 2),
+(447, 4, 4, 9, 84, 3),
+(449, 4, 4, 10, 85, 1),
+(451, 4, 4, 10, 86, 2),
+(453, 4, 4, 10, 87, 3),
+(455, 4, 4, 10, 88, 4),
+(457, 4, 4, 10, 95, 5),
+(459, 4, 4, 11, 100, 1),
+(461, 4, 4, 11, 101, 2),
+(463, 4, 4, 12, 103, 1),
+(465, 4, 4, 12, 104, 2),
+(467, 4, 4, 12, 105, 3),
+(469, 4, 4, 12, 106, 4),
+(471, 4, 4, 12, 107, 5),
+(473, 4, 4, 12, 109, 6),
+(475, 4, 4, 17, 122, 1);
 
 -- --------------------------------------------------------
 
