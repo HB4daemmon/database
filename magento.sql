@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 �?07 �?31 �?11:26
+-- 生成日期: 2015 �?08 �?04 �?04:18
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `adminnotification_inbox` (
   KEY `IDX_ADMINNOTIFICATION_INBOX_SEVERITY` (`severity`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_READ` (`is_read`),
   KEY `IDX_ADMINNOTIFICATION_INBOX_IS_REMOVE` (`is_remove`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=99 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox' AUTO_INCREMENT=101 ;
 
 --
 -- 转存表中的数据 `adminnotification_inbox`
@@ -145,7 +145,9 @@ INSERT INTO `adminnotification_inbox` (`notification_id`, `severity`, `date_adde
 (95, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (96, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
 (97, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
-(98, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
+(98, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(99, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0),
+(100, 4, '2008-11-07 20:46:42', 'Reminder: Change Magento`s default phone numbers and callouts before site launch', 'Before launching your Magento store, please remember to change Magento`s default phone numbers that appear in email templates, callouts, templates, etc.', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -447,7 +449,7 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
 --
 
 INSERT INTO `admin_user` (`user_id`, `firstname`, `lastname`, `email`, `username`, `password`, `created`, `modified`, `logdate`, `lognum`, `reload_acl_flag`, `is_active`, `extra`, `rp_token`, `rp_token_created_at`) VALUES
-(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-07-31 01:23:27', 12, 0, 1, 'a:1:{s:11:"configState";a:9:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";}}', NULL, NULL);
+(1, 'daemon', 'wang', 'hb4daemon@163.com', 'admin', '28cbf7b212acbc9a7474911799cd2b24:OCM6Da85FrRSMc7YOt9jcjWQdrM0gwgn', '2015-07-16 03:43:49', '2015-07-16 03:43:49', '2015-08-03 17:16:36', 14, 0, 1, 'a:1:{s:11:"configState";a:12:{s:7:"web_url";s:1:"1";s:7:"web_seo";s:1:"0";s:12:"web_unsecure";s:1:"1";s:10:"web_secure";s:1:"1";s:11:"web_default";s:1:"0";s:9:"web_polls";s:1:"0";s:10:"web_cookie";s:1:"0";s:11:"web_session";s:1:"0";s:24:"web_browser_capabilities";s:1:"0";s:16:"currency_options";s:1:"1";s:20:"currency_webservicex";s:1:"1";s:15:"currency_import";s:1:"1";}}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3050,7 +3052,8 @@ INSERT INTO `catalog_eav_attribute` (`attribute_id`, `frontend_input_renderer`, 
 (128, NULL, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'downloadable', 0, 0, 0, 0),
 (129, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'downloadable', 0, 0, 0, 0),
 (130, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'downloadable', 0, 0, 0, 0),
-(131, NULL, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'downloadable', 0, 0, 0, 0);
+(131, NULL, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'downloadable', 0, 0, 0, 0),
+(147, NULL, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, NULL, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3233,7 +3236,7 @@ CREATE TABLE IF NOT EXISTS `catalog_product_entity_datetime` (
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID` (`store_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DATETIME_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Datetime Attribute Backend Table' AUTO_INCREMENT=10 ;
 
 --
 -- 转存表中的数据 `catalog_product_entity_datetime`
@@ -3268,7 +3271,7 @@ CREATE TABLE IF NOT EXISTS `catalog_product_entity_decimal` (
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DECIMAL_STORE_ID` (`store_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DECIMAL_ENTITY_ID` (`entity_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table' AUTO_INCREMENT=45 ;
 
 --
 -- 转存表中的数据 `catalog_product_entity_decimal`
@@ -3515,7 +3518,7 @@ CREATE TABLE IF NOT EXISTS `catalog_product_entity_text` (
   KEY `IDX_CATALOG_PRODUCT_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_TEXT_STORE_ID` (`store_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_TEXT_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table' AUTO_INCREMENT=45 ;
 
 --
 -- 转存表中的数据 `catalog_product_entity_text`
@@ -3606,7 +3609,7 @@ CREATE TABLE IF NOT EXISTS `catalog_product_entity_varchar` (
   KEY `IDX_CATALOG_PRODUCT_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_VARCHAR_STORE_ID` (`store_id`),
   KEY `IDX_CATALOG_PRODUCT_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=149 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table' AUTO_INCREMENT=140 ;
 
 --
 -- 转存表中的数据 `catalog_product_entity_varchar`
@@ -3968,13 +3971,6 @@ CREATE TABLE IF NOT EXISTS `catalog_product_index_eav_tmp` (
   KEY `IDX_CATALOG_PRODUCT_INDEX_EAV_TMP_STORE_ID` (`store_id`),
   KEY `IDX_CATALOG_PRODUCT_INDEX_EAV_TMP_VALUE` (`value`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Indexer Temp Table';
-
---
--- 转存表中的数据 `catalog_product_index_eav_tmp`
---
-
-INSERT INTO `catalog_product_index_eav_tmp` (`entity_id`, `attribute_id`, `store_id`, `value`) VALUES
-(21, 121, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -4584,16 +4580,6 @@ CREATE TABLE IF NOT EXISTS `catalog_product_index_price_tmp` (
   KEY `IDX_CATALOG_PRODUCT_INDEX_PRICE_TMP_MIN_PRICE` (`min_price`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='Catalog Product Price Indexer Temp Table';
 
---
--- 转存表中的数据 `catalog_product_index_price_tmp`
---
-
-INSERT INTO `catalog_product_index_price_tmp` (`entity_id`, `customer_group_id`, `website_id`, `tax_class_id`, `price`, `final_price`, `min_price`, `max_price`, `tier_price`, `group_price`) VALUES
-(21, 0, 1, 0, '11.1100', '11.1100', '11.1100', '11.1100', NULL, NULL),
-(21, 1, 1, 0, '11.1100', '11.1100', '11.1100', '11.1100', NULL, NULL),
-(21, 2, 1, 0, '11.1100', '11.1100', '11.1100', '11.1100', NULL, NULL),
-(21, 3, 1, 0, '11.1100', '11.1100', '11.1100', '11.1100', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -5153,14 +5139,14 @@ CREATE TABLE IF NOT EXISTS `core_cache_option` (
 --
 
 INSERT INTO `core_cache_option` (`code`, `value`) VALUES
-('block_html', 1),
-('collections', 1),
-('config', 1),
-('config_api', 1),
-('config_api2', 1),
-('eav', 1),
-('layout', 1),
-('translate', 1);
+('block_html', 0),
+('collections', 0),
+('config', 0),
+('config_api', 0),
+('config_api2', 0),
+('eav', 0),
+('layout', 0),
+('translate', 0);
 
 -- --------------------------------------------------------
 
@@ -5429,7 +5415,8 @@ INSERT INTO `core_resource` (`code`, `version`, `data_version`) VALUES
 ('usa_setup', '1.6.0.3', '1.6.0.3'),
 ('weee_setup', '1.6.0.0', '1.6.0.0'),
 ('widget_setup', '1.6.0.0', '1.6.0.0'),
-('wishlist_setup', '1.6.0.0', '1.6.0.0');
+('wishlist_setup', '1.6.0.0', '1.6.0.0'),
+('xmlconnect_setup', '1.6.0.0.1', '1.6.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -5541,7 +5528,7 @@ CREATE TABLE IF NOT EXISTS `core_url_rewrite` (
   KEY `IDX_CORE_URL_REWRITE_STORE_ID` (`store_id`),
   KEY `FK_CORE_URL_REWRITE_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` (`category_id`),
   KEY `FK_CORE_URL_REWRITE_PRODUCT_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID` (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=129 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Url Rewrites' AUTO_INCREMENT=128 ;
 
 --
 -- 转存表中的数据 `core_url_rewrite`
@@ -10617,7 +10604,7 @@ CREATE TABLE IF NOT EXISTS `eav_attribute` (
   PRIMARY KEY (`attribute_id`),
   UNIQUE KEY `UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE` (`entity_type_id`,`attribute_code`),
   KEY `IDX_EAV_ATTRIBUTE_ENTITY_TYPE_ID` (`entity_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=147 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Attribute' AUTO_INCREMENT=148 ;
 
 --
 -- 转存表中的数据 `eav_attribute`
@@ -10769,7 +10756,8 @@ INSERT INTO `eav_attribute` (`attribute_id`, `entity_type_id`, `attribute_code`,
 (143, 2, 'dateline', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (144, 3, 'origin_cat_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
 (145, 3, 'origin_path', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
-(146, 3, 'origin_parent_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL);
+(146, 3, 'origin_parent_id', NULL, NULL, 'varchar', NULL, NULL, 'hidden', NULL, NULL, NULL, 0, 0, NULL, 0, NULL),
+(147, 3, 'thumbnail', NULL, 'catalog/category_attribute_backend_image', 'varchar', NULL, NULL, 'image', 'Thumbnail Image', NULL, NULL, 0, 0, NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -10943,7 +10931,7 @@ CREATE TABLE IF NOT EXISTS `eav_entity_attribute` (
   UNIQUE KEY `UNQ_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_GROUP_ID_ATTRIBUTE_ID` (`attribute_group_id`,`attribute_id`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_SET_ID_SORT_ORDER` (`attribute_set_id`,`sort_order`),
   KEY `IDX_EAV_ENTITY_ATTRIBUTE_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=135 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Eav Entity Attributes' AUTO_INCREMENT=136 ;
 
 --
 -- 转存表中的数据 `eav_entity_attribute`
@@ -11083,7 +11071,8 @@ INSERT INTO `eav_entity_attribute` (`entity_attribute_id`, `entity_type_id`, `at
 (131, 1, 1, 1, 133, 0),
 (132, 1, 1, 1, 134, 0),
 (133, 1, 1, 1, 135, 0),
-(134, 1, 1, 1, 136, 0);
+(134, 1, 1, 1, 136, 0),
+(135, 3, 3, 4, 147, 4);
 
 -- --------------------------------------------------------
 
@@ -15390,6 +15379,117 @@ CREATE TABLE IF NOT EXISTS `wishlist_item_option` (
   KEY `FK_A014B30B04B72DD0EAB3EECD779728D6` (`wishlist_item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist Item Option Table' AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_application`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_application` (
+  `application_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Application Id',
+  `name` varchar(255) NOT NULL COMMENT 'Application Name',
+  `code` varchar(32) NOT NULL COMMENT 'Application Code',
+  `type` varchar(32) NOT NULL COMMENT 'Device Type',
+  `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+  `active_from` date DEFAULT NULL COMMENT 'Active From',
+  `active_to` date DEFAULT NULL COMMENT 'Active To',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT 'Updated At',
+  `status` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Status',
+  `browsing_mode` smallint(5) unsigned DEFAULT '0' COMMENT 'Browsing Mode',
+  PRIMARY KEY (`application_id`),
+  UNIQUE KEY `UNQ_XMLCONNECT_APPLICATION_CODE` (`code`),
+  KEY `FK_XMLCONNECT_APPLICATION_STORE_ID_CORE_STORE_STORE_ID` (`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect Application' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_config_data`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_config_data` (
+  `application_id` smallint(5) unsigned NOT NULL COMMENT 'Application Id',
+  `category` varchar(60) NOT NULL DEFAULT 'default' COMMENT 'Category',
+  `path` varchar(250) NOT NULL COMMENT 'Path',
+  `value` text NOT NULL COMMENT 'Value',
+  UNIQUE KEY `UNQ_XMLCONNECT_CONFIG_DATA_APPLICATION_ID_CATEGORY_PATH` (`application_id`,`category`,`path`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect Configuration Data';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_history`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_history` (
+  `history_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'History Id',
+  `application_id` smallint(5) unsigned NOT NULL COMMENT 'Application Id',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT 'Created At',
+  `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+  `params` blob COMMENT 'Params',
+  `title` varchar(200) NOT NULL COMMENT 'Title',
+  `activation_key` varchar(255) NOT NULL COMMENT 'Activation Key',
+  `name` varchar(255) NOT NULL COMMENT 'Application Name',
+  `code` varchar(32) NOT NULL COMMENT 'Application Code',
+  PRIMARY KEY (`history_id`),
+  KEY `FK_8F08B9513373BC19F49EE3EF8340E270` (`application_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect History' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_images`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_images` (
+  `image_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Image Id',
+  `application_id` smallint(5) unsigned NOT NULL COMMENT 'Application Id',
+  `image_file` varchar(255) NOT NULL COMMENT 'Image File',
+  `image_type` varchar(255) NOT NULL COMMENT 'Image Type',
+  `order` int(10) unsigned NOT NULL COMMENT 'Order',
+  PRIMARY KEY (`image_id`),
+  KEY `FK_6C55A623A089E4FEA9201FFE01693167` (`application_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect Images' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_notification_template`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_notification_template` (
+  `template_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Template Id',
+  `name` varchar(255) NOT NULL COMMENT 'Template Name',
+  `push_title` varchar(140) NOT NULL COMMENT 'Push Notification Title',
+  `message_title` varchar(255) NOT NULL COMMENT 'Message Title',
+  `content` text NOT NULL COMMENT 'Message Content',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT 'Created At',
+  `modified_at` timestamp NULL DEFAULT NULL COMMENT 'Modified At',
+  `application_id` smallint(5) unsigned NOT NULL COMMENT 'Application Id',
+  PRIMARY KEY (`template_id`),
+  KEY `FK_F9927C7518A907CF5C350942FD296DC3` (`application_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect Notification Template' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `xmlconnect_queue`
+--
+
+CREATE TABLE IF NOT EXISTS `xmlconnect_queue` (
+  `queue_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Queue Id',
+  `create_time` timestamp NULL DEFAULT NULL COMMENT 'Created At',
+  `exec_time` timestamp NULL DEFAULT NULL COMMENT 'Scheduled Execution Time',
+  `template_id` int(10) unsigned NOT NULL COMMENT 'Template Id',
+  `push_title` varchar(140) NOT NULL COMMENT 'Push Notification Title',
+  `message_title` varchar(255) DEFAULT '' COMMENT 'Message Title',
+  `content` text COMMENT 'Message Content',
+  `status` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Status',
+  `type` varchar(12) NOT NULL COMMENT 'Type of Notification',
+  PRIMARY KEY (`queue_id`),
+  KEY `FK_2019AEC5FC55A516965583447CA26B14` (`template_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Xmlconnect Notification Queue' AUTO_INCREMENT=1 ;
+
 --
 -- 限制导出的表
 --
@@ -16962,6 +17062,42 @@ ALTER TABLE `wishlist_item`
 --
 ALTER TABLE `wishlist_item_option`
   ADD CONSTRAINT `FK_A014B30B04B72DD0EAB3EECD779728D6` FOREIGN KEY (`wishlist_item_id`) REFERENCES `wishlist_item` (`wishlist_item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 限制表 `xmlconnect_application`
+--
+ALTER TABLE `xmlconnect_application`
+  ADD CONSTRAINT `FK_XMLCONNECT_APPLICATION_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- 限制表 `xmlconnect_config_data`
+--
+ALTER TABLE `xmlconnect_config_data`
+  ADD CONSTRAINT `FK_31EE36D814216200D7C0723145AC510E` FOREIGN KEY (`application_id`) REFERENCES `xmlconnect_application` (`application_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 限制表 `xmlconnect_history`
+--
+ALTER TABLE `xmlconnect_history`
+  ADD CONSTRAINT `FK_8F08B9513373BC19F49EE3EF8340E270` FOREIGN KEY (`application_id`) REFERENCES `xmlconnect_application` (`application_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 限制表 `xmlconnect_images`
+--
+ALTER TABLE `xmlconnect_images`
+  ADD CONSTRAINT `FK_6C55A623A089E4FEA9201FFE01693167` FOREIGN KEY (`application_id`) REFERENCES `xmlconnect_application` (`application_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 限制表 `xmlconnect_notification_template`
+--
+ALTER TABLE `xmlconnect_notification_template`
+  ADD CONSTRAINT `FK_F9927C7518A907CF5C350942FD296DC3` FOREIGN KEY (`application_id`) REFERENCES `xmlconnect_application` (`application_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 限制表 `xmlconnect_queue`
+--
+ALTER TABLE `xmlconnect_queue`
+  ADD CONSTRAINT `FK_2019AEC5FC55A516965583447CA26B14` FOREIGN KEY (`template_id`) REFERENCES `xmlconnect_notification_template` (`template_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
